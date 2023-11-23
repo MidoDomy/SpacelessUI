@@ -44,10 +44,8 @@ interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof badgeVariants> {}
 
-function Badge({ className, variant, absolute, left, right, top, bottom, rounded, ...props }: BadgeProps) {
-  return (
-    <span className={cn(badgeVariants({ variant, absolute, left, right, top, bottom, rounded }), className)} {...props} />
-  )
-}
+const Badge: React.FC<BadgeProps> = ({ className, variant, absolute, left, right, top, bottom, rounded, ...props }) => (
+  <span className={cn(badgeVariants({ variant, absolute, left, right, top, bottom, rounded }), className)} {...props} />
+)
 
 export { Badge }

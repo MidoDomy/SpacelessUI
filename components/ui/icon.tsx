@@ -1,29 +1,24 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
-const iconVariants = cva(
-  'icon inline-flex [&>svg]:h-full [&>svg]:w-full', 
-  {
-    variants: {
-      size: {
-        sm: 'h-4 w-4',
-        md: 'h-5 w-5',
-        lg: 'h-6 w-6'
-      },
+const iconVariants = cva('icon inline-flex [&>svg]:h-full [&>svg]:w-full', {
+  variants: {
+    size: {
+      sm: 'h-4 w-4',
+      md: 'h-5 w-5',
+      lg: 'h-6 w-6'
     },
-    defaultVariants: {
-      size: 'md',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    size: 'md',
+  },
+});
 
-interface IconProps 
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof iconVariants> {
+interface IconProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof iconVariants> {
   name: string;
 }
 
@@ -61,4 +56,7 @@ const Icon: React.FC<IconProps> = ({ className, name, size, ...props }) => {
   return <span className={cn(iconVariants({ size, className }))} ref={spanRef} {...props} />;
 };
 
-export { Icon };
+export {
+  type IconProps, 
+  Icon 
+}; 

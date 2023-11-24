@@ -69,3 +69,10 @@ export const WithChildren: Story = {
     children: 'Some content here'
   },
 };
+
+export const Danger: Story = {
+  args: {
+    title: 'Lorem ipsum',
+    variant: 'danger'
+  },
+};

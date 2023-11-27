@@ -5,7 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const iconVariants = cva('icon inline-flex [&>svg]:h-full [&>svg]:w-full', {
+const iconVariants = cva('icon inline-flex shrink-0 [&>svg]:h-full [&>svg]:w-full', {
   variants: {
     size: {
       sm: 'h-4 w-4',

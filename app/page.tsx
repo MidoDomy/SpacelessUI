@@ -3,108 +3,61 @@
 import React from 'react';
 
 import { Toaster } from '@/components/ui/toaster'
-import { Button } from '@/components/ui/button'
-import { useToast } from '@/components/ui/use-toast'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Button } from '@/components/ui/button';
 import { ToastAction } from '@/components/ui/toast'
-
-import { ButtonGroup } from '@/components/ui/button-group';
+import { useToast } from '@/components/ui/use-toast'
+import { Icon } from '@/components/ui/icon';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
-    <>
-      <main className='min-h-screen p-24'>
-        <ButtonGroup direction='horizontal'>
-          <Button
-            variant='primary-outline'
-            size='sm'
-            onClick={() => {
-              toast({
-                variant: 'primary',
-                title: 'Notification title',
-                description: 'Your message has been sent.',
-                action: (<>
-                  <ToastAction altText='Try' asChild>
-                    <Button variant='primary-outline' size='sm'>Try</Button>
-                  </ToastAction>
+    <main className='min-h-screen p-6 md:p-24'>
+      <Accordion type='single'>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
 
-                  <ToastAction altText='Close' asChild>
-                    <Button variant='danger-outline' size='sm' onClick={() => console.log('nesto')}>Close</Button>
-                  </ToastAction>
-                </>),
-              })
-            }}
-          >
-            Show Toast primary
-          </Button>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
 
-          <Button
-            variant='secondary-outline'
-            size='md'
-            onClick={() => {
-              toast({
-                variant: 'secondary',
-                description: 'Your message has been sent.',
-              })
-            }}
-          >
-            Show Toast secondary
-          </Button>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-          <Button
-            variant='info-outline'
-            size='lg'
-            onClick={() => {
-              toast({
-                variant: 'info',
-                description: 'Your message has been sent.',
-              })
-            }}
-          >
-            Show Toast info
-          </Button>
+      {/* <Button
+        variant='primary'
+        onClick={() => {
+          toast({
+            title: 'Scheduled: Catch up ',
+            description: 'Friday, February 10, 2023 at 5:57 PM',
+            action: (
+              <ToastAction altText='Goto schedule to undo'>Undo</ToastAction>
+            ),
+          })
+        }}
+      >
+        Add to calendar
+      </Button> */}
 
-          <Button
-            variant='success-outline'
-            onClick={() => {
-              toast({
-                variant: 'success',
-                description: 'Your message has been sent.',
-              })
-            }}
-          >
-            Show Toast success
-          </Button>
-
-          <Button
-            variant='warning-outline'
-            onClick={() => {
-              toast({
-                variant: 'warning',
-                description: 'Your message has been sent.',
-              })
-            }}
-          >
-            Show Toast warning
-          </Button>
-
-          <Button
-            variant='danger-outline'
-            onClick={() => {
-              toast({
-                variant: 'danger',
-                title: 'Danger',
-                description: 'Your message has been sent.',
-              })
-            }}
-          >
-            Show Toast danger
-          </Button>
-        </ButtonGroup>
-      </main>
-        
       <Toaster />
-    </>
+    </main>
   )
 }

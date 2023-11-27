@@ -20,7 +20,9 @@ const alertVariants = cva('flex items-start gap-3 w-full rounded-lg border px-4 
   }
 });
 
-interface AlertProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {
+interface AlertProps 
+  extends React.HTMLAttributes<HTMLDivElement>, 
+    VariantProps<typeof alertVariants> {
   icon?: string;
   title?: string;
   description: string;

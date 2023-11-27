@@ -15,7 +15,9 @@ const buttonGroupVariants = cva('flex', {
   },
 });
 
-interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof buttonGroupVariants> {}
+interface ButtonGroupProps 
+  extends React.HTMLAttributes<HTMLDivElement>, 
+    VariantProps<typeof buttonGroupVariants> {}
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ className, direction, ...props }) => (
   <div className={cn(buttonGroupVariants({ direction }), className)} {...props} />

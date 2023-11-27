@@ -37,7 +37,9 @@ const badgeVariants = cva('inline-flex items-center px-2 py-0.5 border rounded f
   },
 });
 
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof badgeVariants> {}
+interface BadgeProps 
+  extends React.HTMLAttributes<HTMLSpanElement>, 
+    VariantProps<typeof badgeVariants> {}
 
 const Badge: React.FC<BadgeProps> = ({ className, variant, absolute, left, right, top, bottom, rounded, ...props }) => (
   <span className={cn(badgeVariants({ variant, absolute, left, right, top, bottom, rounded }), className)} {...props} />

@@ -18,7 +18,9 @@ const iconVariants = cva('icon inline-flex [&>svg]:h-full [&>svg]:w-full', {
   },
 });
 
-interface IconProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof iconVariants> {
+interface IconProps 
+  extends React.HTMLAttributes<HTMLSpanElement>, 
+    VariantProps<typeof iconVariants> {
   name: string;
 }
 

@@ -85,7 +85,9 @@ const buttonVariants = cva('inline-flex items-center justify-center border round
   },
 });
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface ButtonProps 
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, 
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   onlyIcon?: boolean;
   icon?: string;

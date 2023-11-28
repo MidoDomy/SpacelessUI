@@ -63,7 +63,6 @@ const AccordionContent = React.forwardRef<
     <div className={cn('px-5 py-4 border-t text-sm', className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
-
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

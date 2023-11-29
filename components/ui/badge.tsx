@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const badgeVariants = cva('inline-flex items-center px-2 py-0.5 border rounded font-medium text-xs text-white', {
+const badgeVariants = cva('inline-flex items-center min-h-[16px] min-w-[16px] px-2 py-0.5 border rounded font-medium text-xs text-white', {
   variants: {
     variant: {
       primary: 'bg-primary-600 border-primary-600',
@@ -13,24 +13,12 @@ const badgeVariants = cva('inline-flex items-center px-2 py-0.5 border rounded f
       warning: 'bg-warning-600 border-warning-600',
       danger: 'bg-danger-600 border-danger-600',
     },
-    absolute: {
-      true: 'absolute'
-    },
-    left: {
-      true: 'left-0 -translate-x-1/2'
-    },
-    right: {
-      true: 'right-0 translate-x-1/2'
-    },
-    top: {
-      true: 'top-0 -translate-y-1/2'
-    },
-    bottom: {
-      true: 'bottom-0 translate-y-1/2'
-    },
-    rounded: {
-      true: 'rounded-full'
-    }
+    absolute: { true: 'absolute' },
+    left: { true: 'left-0 -translate-x-1/2' },
+    right: { true: 'right-0 translate-x-1/2' },
+    top: { true: 'top-0 -translate-y-1/2' },
+    bottom: { true: 'bottom-0 translate-y-1/2' },
+    rounded: { true: 'rounded-full' }
   },
   defaultVariants: {
     variant: 'primary',

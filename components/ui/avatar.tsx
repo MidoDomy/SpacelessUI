@@ -13,9 +13,7 @@ const avatarVariants = cva('relative flex h-10 w-10 shrink-0 rounded-lg', {
       md: 'h-12 w-12',
       lg: 'h-14 w-14',
     },
-    rounded: {
-      true: 'rounded-full'
-    }
+    rounded: { true: 'rounded-full' }
   },
   defaultVariants: {
     size: 'md',

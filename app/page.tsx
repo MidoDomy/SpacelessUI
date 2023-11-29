@@ -14,16 +14,61 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
+import {
+  ListGroup,
+  ListGroupItem
+} from '@/components/ui/list-group'
 import { Button } from '@/components/ui/button';
 import { ToastAction } from '@/components/ui/toast'
 import { useToast } from '@/components/ui/use-toast'
 import { Icon } from '@/components/ui/icon';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Divider } from '@/components/ui/divider'
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <ListGroup>
+        <ListGroupItem>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='primary'>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='secondary'>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='info'>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='success'>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='warning'>Can I use this in my project?</ListGroupItem>
+        <ListGroupItem variant='danger'>Can I use this in my project?</ListGroupItem>
+      </ListGroup>
+
+      <Popover>
+        <PopoverTrigger>Open</PopoverTrigger>
+        <PopoverContent>Place content for the popover here.</PopoverContent>
+      </Popover>
+
+      <Divider>
+        nesto
+      </Divider>
+
+      <TooltipProvider>
+        <Tooltip aria-label="Toggle italic">
+          <TooltipTrigger>Hover</TooltipTrigger>
+
+          <TooltipContent>
+            <p>Add to library</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
       <Collapsible>
         <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
         <CollapsibleContent>
@@ -55,8 +100,9 @@ export default function Home() {
         </AccordionItem>
       </Accordion>
 
-      {/* <Button
+      <Button
         variant='primary'
+        size='sm'
         onClick={() => {
           toast({
             title: 'Scheduled: Catch up ',
@@ -68,7 +114,7 @@ export default function Home() {
         }}
       >
         Add to calendar
-      </Button> */}
+      </Button>
 
       <Toaster />
     </main>

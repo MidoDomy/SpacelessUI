@@ -103,6 +103,8 @@ export default function Home() {
       <Button
         variant='primary'
         size='sm'
+        icon='home'
+        rounded
         onClick={() => {
           toast({
             title: 'Scheduled: Catch up ',

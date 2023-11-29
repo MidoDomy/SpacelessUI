@@ -34,12 +34,63 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Divider } from '@/components/ui/divider'
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuShortcut,
+  ContextMenuTrigger, 
+  ContextMenuPortal, 
+  ContextMenuRadioGroup, 
+  ContextMenuRadioItem, 
+  ContextMenuSeparator, 
+  ContextMenuSub, 
+  ContextMenuSubContent, 
+  ContextMenuSubTrigger } from '@/components/ui/context-menu';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <ContextMenu>
+        <ContextMenuTrigger>Right click</ContextMenuTrigger>
+        <ContextMenuContent className='min-w-[220px]'>
+          <ContextMenuLabel>Menu label</ContextMenuLabel>
+          <ContextMenuItem onClick={() => {}}>Item</ContextMenuItem>
+
+          <ContextMenuGroup>
+            <ContextMenuItem>Item</ContextMenuItem>
+          </ContextMenuGroup>
+
+          <ContextMenuCheckboxItem>
+            Chekbox item
+          </ContextMenuCheckboxItem>
+
+          <ContextMenuRadioGroup>
+            <ContextMenuRadioItem value={''}>
+              Radio item
+            </ContextMenuRadioItem>
+          </ContextMenuRadioGroup>
+
+          <ContextMenuSeparator />
+
+          <ContextMenuSub>
+            <ContextMenuSubTrigger>Sub trigger</ContextMenuSubTrigger>
+            <ContextMenuPortal>
+              <ContextMenuSubContent>
+                <ContextMenuItem>Item</ContextMenuItem>
+                <ContextMenuItem>Item</ContextMenuItem>
+              </ContextMenuSubContent>
+            </ContextMenuPortal>
+          </ContextMenuSub>
+          <ContextMenuShortcut>ctrl + C</ContextMenuShortcut>
+        </ContextMenuContent>
+      </ContextMenu>
+
       <ListGroup>
         <ListGroupItem>Can I use this in my project?</ListGroupItem>
         <ListGroupItem variant='primary'>Can I use this in my project?</ListGroupItem>

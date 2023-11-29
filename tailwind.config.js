@@ -25,6 +25,16 @@ module.exports = {
         success: colors.green,
         warning: colors.yellow,
         danger: colors.red,
+        body: {
+          bg: colors.slate[50],
+          color: colors.slate[900],
+        },
+        link: {
+          DEFAULT: colors.sky[600],
+          hover: colors.sky[700],
+        },
+        muted: colors.slate[600],
+        border: colors.gray[200],
       },
       keyframes: {
         "accordion-down": {

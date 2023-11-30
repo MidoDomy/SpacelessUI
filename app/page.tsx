@@ -68,20 +68,88 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <DropdownMenu>
+        <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem>
+            New Tab <div className="RightSlot">⌘+T</div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            New Window <div className="RightSlot">⌘+N</div>
+          </DropdownMenuItem>
+          <DropdownMenuItem disabled>
+            New Private Window <div className="RightSlot">⇧+⌘+N</div>
+          </DropdownMenuItem>
+
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              More Tools
+            </DropdownMenuSubTrigger>
+            
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>
+                Save Page As… <div className="RightSlot">⌘+S</div>
+              </DropdownMenuItem>
+              <DropdownMenuItem>Create Shortcut…</DropdownMenuItem>
+              <DropdownMenuItem>Name Window…</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Developer Tools</DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuCheckboxItem>
+            Show Bookmarks <div className="RightSlot">⌘+B</div>
+          </DropdownMenuCheckboxItem>
+
+          <DropdownMenuCheckboxItem>
+            Show Full URLs
+          </DropdownMenuCheckboxItem>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuLabel>People</DropdownMenuLabel>
+          <DropdownMenuRadioGroup value={''}>
+            <DropdownMenuRadioItem value="pedro">
+              Pedro Duarte
+            </DropdownMenuRadioItem>
+
+            <DropdownMenuRadioItem value="colm">
+              Colm Tuite
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
       <Dialog>
         <DialogTrigger>Open</DialogTrigger>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Are you sure absolutely sure?</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your account
-              and remove your data from our servers.
+              This action cannot be undone This will permanently delete your account
+              and remove your data from our servers
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -95,8 +163,8 @@ export default function Home() {
           </SheetHeader>
         
           <SheetDescription>
-            This action cannot be undone. This will permanently delete your account
-            and remove your data from our servers.
+            This action cannot be undone This will permanently delete your account
+            and remove your data from our servers
           </SheetDescription>
         </SheetContent>
       </Sheet>
@@ -149,12 +217,11 @@ export default function Home() {
 
           <ContextMenuSub>
             <ContextMenuSubTrigger>Sub trigger</ContextMenuSubTrigger>
-            <ContextMenuPortal>
-              <ContextMenuSubContent>
-                <ContextMenuItem>Item</ContextMenuItem>
-                <ContextMenuItem>Item</ContextMenuItem>
-              </ContextMenuSubContent>
-            </ContextMenuPortal>
+          
+            <ContextMenuSubContent>
+              <ContextMenuItem>Item</ContextMenuItem>
+              <ContextMenuItem>Item</ContextMenuItem>
+            </ContextMenuSubContent>
           </ContextMenuSub>
           <ContextMenuShortcut>ctrl + C</ContextMenuShortcut>
         </ContextMenuContent>
@@ -172,7 +239,7 @@ export default function Home() {
 
       <Popover>
         <PopoverTrigger>Open</PopoverTrigger>
-        <PopoverContent>Place content for the popover here.</PopoverContent>
+        <PopoverContent>Place content for the popover here</PopoverContent>
       </Popover>
 
       <Divider>
@@ -192,8 +259,8 @@ export default function Home() {
       <Collapsible>
         <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
         <CollapsibleContent>
-          Yes. Free to use for personal and commercial projects. No attribution
-          required.
+          Yes Free to use for personal and commercial projects No attribution
+          required
         </CollapsibleContent>
       </Collapsible>
 
@@ -201,7 +268,7 @@ export default function Home() {
         <AccordionItem value='item-1'>
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            Yes It adheres to the WAI-ARIA design pattern
           </AccordionContent>
         </AccordionItem>
 

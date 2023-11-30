@@ -52,12 +52,34 @@ import {
   ContextMenuSubTrigger } from '@/components/ui/context-menu';
 import { Badge } from '@/components/ui/badge';
 import { Tag } from '@/components/ui/tag';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Sheet>
+        <SheetTrigger>Open</SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+          </SheetHeader>
+        
+          <SheetDescription>
+            This action cannot be undone. This will permanently delete your account
+            and remove your data from our servers.
+          </SheetDescription>
+        </SheetContent>
+      </Sheet>
+      
       <div className='flex gap-1 mb-2'>
         <Badge variant='primary'>Badge</Badge>
         <Badge variant='secondary'>Badge</Badge>

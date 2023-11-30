@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const badgeVariants = cva('inline-flex items-center min-h-[16px] min-w-[16px] px-2 py-0.5 border rounded font-medium text-xs text-white', {
+const badgeVariants = cva('inline-flex items-center min-h-[16px] min-w-[16px] px-2 py-0.5 border rounded-full font-medium text-xs text-white', {
   variants: {
     variant: {
       primary: 'bg-primary-600 border-primary-600',
@@ -18,7 +18,6 @@ const badgeVariants = cva('inline-flex items-center min-h-[16px] min-w-[16px] px
     right: { true: 'right-0 translate-x-1/2' },
     top: { true: 'top-0 -translate-y-1/2' },
     bottom: { true: 'bottom-0 translate-y-1/2' },
-    rounded: { true: 'rounded-full' }
   },
   defaultVariants: {
     variant: 'primary',
@@ -29,8 +28,8 @@ interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement>, 
     VariantProps<typeof badgeVariants> {}
 
-const Badge: React.FC<BadgeProps> = ({ className, variant, absolute, left, right, top, bottom, rounded, ...props }) => (
-  <span className={cn(badgeVariants({ variant, absolute, left, right, top, bottom, rounded }), className)} {...props} />
+const Badge: React.FC<BadgeProps> = ({ className, variant, absolute, left, right, top, bottom, ...props }) => (
+  <span className={cn(badgeVariants({ variant, absolute, left, right, top, bottom }), className)} {...props} />
 );
 
 export { Badge };

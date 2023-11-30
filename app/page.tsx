@@ -50,12 +50,38 @@ import {
   ContextMenuSub, 
   ContextMenuSubContent, 
   ContextMenuSubTrigger } from '@/components/ui/context-menu';
+import { Badge } from '@/components/ui/badge';
+import { Tag } from '@/components/ui/tag';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <div className='flex gap-1 mb-2'>
+        <Badge variant='primary'>Badge</Badge>
+        <Badge variant='secondary'>Badge</Badge>
+        <Badge variant='info'>Badge</Badge>
+        <Badge variant='success'>Badge</Badge>
+        <Badge variant='warning'>Badge</Badge>
+        <Badge variant='danger'>Badge</Badge>
+      </div>
+      
+      <div className='flex gap-1'>
+        <Tag variant='primary'>Tag 2</Tag>
+        <Tag variant='secondary'>Tag 2</Tag>
+        <Tag variant='info'>Tag 2</Tag>
+        <Tag variant='success'>Tag 2</Tag>
+        <Tag variant='warning'>Tag 2</Tag>
+        <Tag variant='danger'>Tag 2</Tag>
+      </div>
+
+      <Tag size='sm'>Tag 2</Tag>
+      <Tag size='md'>Tag 2</Tag>
+      <Tag size='lg'>Tag 2</Tag>
+
+      <Divider></Divider>
+
       <ContextMenu>
         <ContextMenuTrigger>Right click</ContextMenuTrigger>
         <ContextMenuContent className='min-w-[220px]'>

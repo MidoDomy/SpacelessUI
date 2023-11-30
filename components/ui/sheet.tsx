@@ -76,7 +76,10 @@ SheetContent.displayName = SheetPrimitive.Content.displayName
 
 const SheetHeader = ({ className, ...props}: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn('flex flex-col gap-2', className)}
+    className={cn(
+      'flex flex-col gap-2', 
+      className
+    )}
     {...props}
   />
 )
@@ -93,7 +96,10 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={cn('text-lg font-medium', className)}
+    className={cn(
+      'text-lg font-medium', 
+      className
+    )}
     {...props}
   />
 ))
@@ -105,7 +111,10 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-muted', className)}
+    className={cn(
+      'text-sm text-muted', 
+      className
+    )}
     {...props}
   />
 ))

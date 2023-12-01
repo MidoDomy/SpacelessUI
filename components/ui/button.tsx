@@ -80,17 +80,17 @@ const buttonVariants = cva('inline-flex items-center justify-center border round
     {
       onlyIcon: true,
       size: 'sm',
-      className: 'px-1.5',
+      className: 'px-1.5 min-w-[30px]',
     },
     {
       onlyIcon: true,
       size: 'md',
-      className: 'px-2',
+      className: 'px-2 min-w-[38px]',
     },
     {
       onlyIcon: true,
       size: 'lg',
-      className: 'px-2.5',
+      className: 'px-2.5 min-w-[46px]',
     },
   ],
   defaultVariants: {

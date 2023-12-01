@@ -333,6 +333,7 @@ export default function Home() {
         variant='primary'
         size='sm'
         icon='home'
+        onlyIcon
         rounded
         onClick={() => {
           toast({

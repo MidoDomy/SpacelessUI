@@ -93,12 +93,26 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Pagination, PaginationButton } from '@/components/ui/pagination';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Pagination>
+        <PaginationButton>
+          <Icon name='chevron-left' size='sm' />
+        </PaginationButton>
+        <PaginationButton>1</PaginationButton>
+        <PaginationButton>2</PaginationButton>
+        <PaginationButton>3</PaginationButton>
+        <PaginationButton>4</PaginationButton>
+        <PaginationButton>
+          <Icon name='chevron-right' size='sm' />
+        </PaginationButton>
+      </Pagination>
+
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>

@@ -33,7 +33,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { Divider } from '@/components/ui/divider'
+import { Separator } from '@/components/ui/separator'
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -83,12 +83,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Skeleton className="w-[100px] h-[20px]" />
+
       <Tabs defaultValue="account">
         <TabsList variant='button'>
           <TabsTrigger variant='button' value="account">Account</TabsTrigger>
@@ -201,7 +204,7 @@ export default function Home() {
       <Tag size='md'>Tag 2</Tag>
       <Tag size='lg'>Tag 2</Tag>
 
-      <Divider></Divider>
+      <Separator></Separator>
 
       <ContextMenu>
         <ContextMenuTrigger>Right click</ContextMenuTrigger>
@@ -252,9 +255,9 @@ export default function Home() {
         <PopoverContent>Place content for the popover here</PopoverContent>
       </Popover>
 
-      <Divider>
+      <Separator>
         nesto
-      </Divider>
+      </Separator>
 
       <TooltipProvider>
         <Tooltip aria-label="Toggle italic">

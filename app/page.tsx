@@ -94,12 +94,28 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Pagination, PaginationButton } from '@/components/ui/pagination';
+import { Slider, SliderItem } from '@/components/ui/slider'
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Slider navigation pagination loop>
+        <SliderItem className='bg-primary-50'>
+          <h1>Neki text ovdje</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. A earum corrupti reprehenderit tempora labore nulla! Animi fugit error vel sunt similique corporis cupiditate illum. Exercitationem sapiente quis libero! Consequuntur quos temporibus sed ad expedita commodi porro. Labore inventore dolorem qui.</p>
+        </SliderItem>
+
+        <SliderItem className='bg-primary-50'>
+          Slide 2
+        </SliderItem>
+
+        <SliderItem className='bg-primary-50'>
+          Slide 3
+        </SliderItem>
+      </Slider>
+
       <Pagination>
         <PaginationButton>
           <Icon name='chevron-left' size='sm' />

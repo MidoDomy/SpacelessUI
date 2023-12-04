@@ -95,12 +95,29 @@ import {
 } from "@/components/ui/table"
 import { Pagination, PaginationButton } from '@/components/ui/pagination';
 import { Slider, SliderItem } from '@/components/ui/slider'
+import { Breadcrumbs, BreadcrumbsDivider, BreadcrumbsItem } from '@/components/ui/breadcrumbs';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Breadcrumbs>
+        <BreadcrumbsItem asChild>
+          <a href="#">
+            Item 1
+          </a>
+        </BreadcrumbsItem>
+        <BreadcrumbsDivider />
+        <BreadcrumbsItem>
+          Item 2
+        </BreadcrumbsItem>
+        <BreadcrumbsDivider />
+        <BreadcrumbsItem>
+          Item 3
+        </BreadcrumbsItem>
+      </Breadcrumbs>
+
       <Slider navigation pagination loop>
         <SliderItem className='bg-primary-50'>
           <h1>Neki text ovdje</h1>

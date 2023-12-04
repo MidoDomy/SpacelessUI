@@ -96,12 +96,41 @@ import {
 import { Pagination, PaginationButton } from '@/components/ui/pagination';
 import { Slider, SliderItem } from '@/components/ui/slider'
 import { Breadcrumbs, BreadcrumbsDivider, BreadcrumbsItem } from '@/components/ui/breadcrumbs';
+import { Steps, StepsDivider, StepsItem, StepsTitle, StepsDescription } from '@/components/ui/steps';
 
 export default function Home() {
   const { toast } = useToast()
 
   return (
     <main className='min-h-screen p-6 md:p-24'>
+      <Steps>
+        <StepsItem asChild>
+          <a href="#">
+            <div className='inline-flex p-2 rounded-full bg-primary-600 text-white'>
+              <Icon name='x' size='lg' />
+            </div>
+            <StepsTitle>Item 1</StepsTitle>
+            <StepsDescription>Item 1 description text</StepsDescription>
+          </a>
+        </StepsItem>
+        <StepsDivider />
+        <StepsItem>
+          <div className='inline-flex p-2 rounded-full bg-primary-600 text-white'>
+            <Icon name='home' size='lg' />
+          </div>
+          <StepsTitle>Item 2</StepsTitle>
+          <StepsDescription>Item 2 description text</StepsDescription>
+        </StepsItem>
+        <StepsDivider />
+        <StepsItem>
+          <div className='inline-flex p-2 rounded-full bg-primary-600 text-white'>
+            <Icon name='chevron-down' size='lg' />
+          </div>
+          <StepsTitle>Item 3</StepsTitle>
+          <StepsDescription>Item 3 description text</StepsDescription>
+        </StepsItem>
+      </Steps>
+
       <Breadcrumbs>
         <BreadcrumbsItem asChild>
           <a href="#">

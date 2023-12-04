@@ -3,7 +3,10 @@
 @tailwind utilities;
  
 @layer base {
-  :root {}
+  :root {
+    --swiper-navigation-color: theme('colors.primary.600');
+    --swiper-theme-color: theme('colors.primary.600');
+  }
  
   .dark {}
 }
@@ -23,4 +26,10 @@ a {
 
 a:hover {
   color: theme('colors.link.hover');
+}
+
+/* Swiper */
+.swiper-button-prev, 
+.swiper-button-next {
+  --swiper-navigation-size: 25px;
 }

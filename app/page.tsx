@@ -108,7 +108,9 @@ export default function Home() {
         </SliderItem>
 
         <SliderItem className='bg-primary-50'>
-          Slide 2
+          <div className='flex h-full justify-center items-center'>
+            Slide 2
+          </div>
         </SliderItem>
 
         <SliderItem className='bg-primary-50'>

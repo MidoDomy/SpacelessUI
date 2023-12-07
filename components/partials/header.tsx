@@ -32,7 +32,7 @@ export default function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink href='/docs/components/accordion'> Components </NavigationMenuLink>
+                <NavigationMenuLink href='/docs/components/button'> Components </NavigationMenuLink>
               </NavigationMenuItem>
 
               {/* <NavigationMenuItem>

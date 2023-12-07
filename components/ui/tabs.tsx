@@ -36,7 +36,7 @@ TabsList.displayName = TabsPrimitive.List.displayName
 const tabsTriggerVariants = cva('inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all hover:text-primary-700 disabled:pointer-events-none disabled:opacity-50', {
   variants: {
     variant: {
-      link: 'pb-1 px-0.5 border-b border-transparent data-[state=active]:border-primary-700 data-[state=active]:text-primary-700',
+      link: 'pb-1 px-1.5 border-b-2 border-transparent data-[state=active]:border-primary-700 data-[state=active]:text-primary-700',
       button: 'px-3 py-1.5 rounded-sm data-[state=active]:bg-primary-50 data-[state=active]:text-primary-700 data-[state=active]:shadow-sm'
     },
   },

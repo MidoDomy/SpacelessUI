@@ -12,7 +12,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className='flex gap-24'>
-      <div>
+      <div className='shrink-0'>
         <AsideNavigation>
           {/* Getting started */}
           <AsideNavigationGroup>
@@ -27,9 +27,8 @@ export default function DashboardLayout({
 
           {/* Components */}
           <AsideNavigationGroup>
-            <AsideNavigationGroupTitle>
-              Components
-            </AsideNavigationGroupTitle>
+            <AsideNavigationGroupTitle> Components </AsideNavigationGroupTitle>
+
             <AsideNavigationLink href='/docs/components/accordion'>
               Accordion
             </AsideNavigationLink>
@@ -48,11 +47,14 @@ export default function DashboardLayout({
             <AsideNavigationLink href='/docs/components/badge'>
               Badge
             </AsideNavigationLink>
+            <AsideNavigationLink href='/docs/components/button'>
+              Button
+            </AsideNavigationLink>
           </AsideNavigationGroup>
         </AsideNavigation>
       </div>
 
-      <div className='grow'>
+      <div className='grow flex gap-20'>
         {children}
       </div>
     </div>

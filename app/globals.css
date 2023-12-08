@@ -1,35 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
-    --swiper-navigation-color: theme('colors.primary.600');
-    --swiper-theme-color: theme('colors.primary.600');
+    --swiper-navigation-color: theme("colors.primary.600");
+    --swiper-theme-color: theme("colors.primary.600");
   }
- 
-  .dark {}
+
+  .dark {
+  }
 }
 
-*, ::before, ::after {
-  border-color: theme('colors.border');
+*,
+::before,
+::after {
+  border-color: theme("colors.border");
 }
 
 body {
-  background-color: theme('colors.body.bg');
-  color: theme('colors.body.color');
+  background-color: theme("colors.body.bg");
+  color: theme("colors.body.color");
 }
 
 a {
-  color: theme('colors.link.DEFAULT');
+  color: theme("colors.link.DEFAULT");
 }
 
 a:hover {
-  color: theme('colors.link.hover');
+  color: theme("colors.link.hover");
 }
 
 /* Swiper */
-.swiper-button-prev, 
+.swiper-button-prev,
 .swiper-button-next {
   --swiper-navigation-size: 25px;
 }

@@ -22,10 +22,8 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <Header />
 
-        <main className='grow py-10'>
-          <div className="container">
-            {children}
-          </div>
+        <main className="grow py-10">
+          <div className="container">{children}</div>
         </main>
 
         <Footer />

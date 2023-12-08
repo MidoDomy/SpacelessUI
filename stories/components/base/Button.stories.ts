@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -15,31 +15,45 @@ const meta = {
   argTypes: {
     children: {
       constrol: 'text',
-      description: 'This is default storybook option to change content of the component.',
+      description:
+        'This is default storybook option to change content of the component.',
     },
-    variant: { 
-      control: 'select', 
+    variant: {
+      control: 'select',
       options: [
-        'primary', 'primary-outline', 'primary-ghost',
-        'secondary', 'secondary-outline', 'secondary-ghost',
-        'info', 'info-outline', 'info-ghost',
-        'success', 'success-outline', 'success-ghost',
-        'warning', 'warning-outline', 'warning-ghost',
-        'danger', 'danger-outline', 'danger-ghost'
+        'primary',
+        'primary-outline',
+        'primary-ghost',
+        'secondary',
+        'secondary-outline',
+        'secondary-ghost',
+        'info',
+        'info-outline',
+        'info-ghost',
+        'success',
+        'success-outline',
+        'success-ghost',
+        'warning',
+        'warning-outline',
+        'warning-ghost',
+        'danger',
+        'danger-outline',
+        'danger-ghost',
       ],
     },
-    size: { 
-      control: 'inline-radio', 
+    size: {
+      control: 'inline-radio',
       options: ['sm', 'md', 'lg'],
     },
-    rounded: { 
+    rounded: {
       control: 'boolean',
     },
-    fullWidth: { 
+    fullWidth: {
       control: 'boolean',
     },
     asChild: {
-      description: 'If you want the child component to take over all the properties of the button, add this attribute.',
+      description:
+        'If you want the child component to take over all the properties of the button, add this attribute.',
     },
     icon: {
       control: 'select',
@@ -62,14 +76,14 @@ const meta = {
         iconHome: 'home',
       },
     },
-    onlyIcon: { 
+    onlyIcon: {
       control: 'boolean',
     },
-    loading: { 
+    loading: {
       control: 'boolean',
       description: 'Loading will replace left icon with loading spinner.',
     },
-    disabled: { 
+    disabled: {
       control: 'boolean',
     },
   },
@@ -84,79 +98,79 @@ const meta = {
     asChild: false,
     onlyIcon: false,
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Button>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {};
+export const Default: Story = {}
 
 export const Outline: Story = {
   args: {
     variant: 'primary-outline',
   },
-};
+}
 
 export const Ghost: Story = {
   args: {
     variant: 'primary-ghost',
   },
-};
+}
 
 export const Disabled: Story = {
   args: {
-    disabled: true
+    disabled: true,
   },
-};
+}
 
 export const Rounded: Story = {
   args: {
     rounded: true,
   },
-};
+}
 
 export const FullWidth: Story = {
   args: {
     fullWidth: true,
   },
-};
+}
 
 export const Icon: Story = {
   args: {
-    icon: 'iconHome'
+    icon: 'iconHome',
   },
-};
+}
 
 export const IconLeft: Story = {
   args: {
-    iconLeft: 'iconHome'
+    iconLeft: 'iconHome',
   },
-};
+}
 
 export const IconRight: Story = {
   args: {
-    iconRight: 'iconHome'
+    iconRight: 'iconHome',
   },
-};
+}
 
 export const OnlyIcon: Story = {
   args: {
     icon: 'iconHome',
-    onlyIcon: true
+    onlyIcon: true,
   },
-};
+}
 
 export const OnlyIconRounded: Story = {
   args: {
     icon: 'iconHome',
     onlyIcon: true,
-    rounded: true
+    rounded: true,
   },
-};
+}
 
 export const Loading: Story = {
   args: {
-    loading: true
+    loading: true,
   },
-};
+}

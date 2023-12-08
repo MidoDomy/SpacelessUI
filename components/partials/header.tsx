@@ -6,21 +6,17 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuLink
+  NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
 
 export default function Header() {
   return (
-    <header className='py-4 border-b'>
-      <div className='container'>
-        <div className='flex justify-between items-center gap-3'>
+    <header className="py-4 border-b">
+      <div className="container">
+        <div className="flex justify-between items-center gap-3">
           {/* Logo */}
-          <Link className='flex gap-2 font-medium text-inherit' href='/'>
-            <img
-              className='w-6' 
-              src='/images/logo.svg' 
-              alt='Logo' 
-            />
+          <Link className="flex gap-2 font-medium text-inherit" href="/">
+            <img className="w-6" src="/images/logo.svg" alt="Logo" />
             Logo img
           </Link>
 
@@ -28,11 +24,17 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink href='/docs/introduction'> Documentation </NavigationMenuLink>
+                <NavigationMenuLink href="/docs/introduction">
+                  {' '}
+                  Documentation{' '}
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuLink href='/docs/components/button'> Components </NavigationMenuLink>
+                <NavigationMenuLink href="/docs/components/button">
+                  {' '}
+                  Components{' '}
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               {/* <NavigationMenuItem>
@@ -48,9 +50,7 @@ export default function Header() {
           </NavigationMenu>
 
           {/* Contacts, Theme (custom), Search */}
-          <div>
-            Actions
-          </div>
+          <div>Actions</div>
         </div>
       </div>
     </header>

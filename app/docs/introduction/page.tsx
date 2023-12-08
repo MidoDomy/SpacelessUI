@@ -1,9 +1,5 @@
 import React from 'react'
 
 export default function Introduction() {
-  return (
-    <div>
-      Introduction content
-    </div>
-  )
+  return <div>Introduction content</div>
 }

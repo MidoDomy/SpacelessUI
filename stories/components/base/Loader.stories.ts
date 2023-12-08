@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Loader } from "@/components/ui/loader"
+import { Loader } from '@/components/ui/loader'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -13,30 +13,30 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    size: { 
-      control: 'inline-radio', 
+    size: {
+      control: 'inline-radio',
       options: ['sm', 'md', 'lg'],
     },
   },
   args: {
-    size: 'md'
+    size: 'md',
   },
-} satisfies Meta<typeof Loader>;
+} satisfies Meta<typeof Loader>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {};
+export const Default: Story = {}
 
 export const Small: Story = {
   args: {
-    size: 'sm'
+    size: 'sm',
   },
-};
+}
 
 export const Large: Story = {
   args: {
-    size: 'lg'
+    size: 'lg',
   },
-};
+}

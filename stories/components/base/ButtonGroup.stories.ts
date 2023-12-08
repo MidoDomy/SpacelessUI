@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { ButtonGroup } from '@/components/ui/button-group'
 import { Button } from '@/components/ui/button'
@@ -14,18 +14,18 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    direction: { 
-      control: 'select', 
+    direction: {
+      control: 'select',
       options: ['horizontal', 'vertical'],
     },
   },
   args: {
-    direction: 'horizontal'
+    direction: 'horizontal',
   },
-} satisfies Meta<typeof ButtonGroup>;
+} satisfies Meta<typeof ButtonGroup>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 // export const Default: Story = {

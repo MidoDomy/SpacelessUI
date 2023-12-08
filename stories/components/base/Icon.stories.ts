@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Icon } from "@/components/ui/icon"
+import { Icon } from '@/components/ui/icon'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -16,36 +16,36 @@ const meta = {
     name: {
       constrol: 'text',
     },
-    size: { 
-      control: 'inline-radio', 
+    size: {
+      control: 'inline-radio',
       options: ['sm', 'md', 'lg'],
     },
   },
   args: {
-    size: 'md'
+    size: 'md',
   },
-} satisfies Meta<typeof Icon>;
+} satisfies Meta<typeof Icon>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    name: 'home'
+    name: 'home',
   },
-};
+}
 
 export const Small: Story = {
   args: {
     name: 'home',
-    size: 'sm'
+    size: 'sm',
   },
-};
+}
 
 export const Large: Story = {
   args: {
     name: 'home',
-    size: 'lg'
+    size: 'lg',
   },
-};
+}

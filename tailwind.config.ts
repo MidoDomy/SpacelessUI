@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,7 +9,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -35,6 +36,11 @@ module.exports = {
         },
         muted: colors.slate[600],
         border: colors.gray[200],
+        auto: Object.fromEntries(
+          [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
+            (value) => [value, `rgba(var(--color-${value}), <alpha-value>)`],
+          ),
+        ),
       },
       keyframes: {
         'accordion-down': {
@@ -52,5 +58,43 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(({ theme, addUtilities }) => {
+      const autoColors: Record<string, Record<string, string>> = {}
+      const colors = theme('colors')
+
+      const hexToRgb = (hex: string) => {
+        let fullHex = hex
+
+        // Convert #RGB to #RRGGBB format
+        if (hex.length === 4) {
+          fullHex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`
+        }
+
+        // Function to convert hex to RGB
+        const bigint = parseInt(fullHex.slice(1), 16)
+        const r = (bigint >> 16) & 255
+        const g = (bigint >> 8) & 255
+        const b = bigint & 255
+        return [r, g, b].join(', ')
+      }
+
+      for (const color in colors) {
+        if (typeof colors[color] === 'object') {
+          const colorPalette: Record<string, string> = {}
+
+          for (const colorInner in colors[color]) {
+            const hexValue = colors[color][colorInner]
+            const rgbValue = hexToRgb(hexValue)
+            colorPalette[`--color-${colorInner}`] = rgbValue
+          }
+
+          autoColors[`.color-${color}`] = colorPalette
+        }
+      }
+
+      addUtilities(autoColors, ['responsive', 'hover', 'focus', 'active'])
+    }),
+  ],
 }

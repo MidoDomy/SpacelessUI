@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Alert } from "@/components/ui/alert"
+import { Alert } from '@/components/ui/alert'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -13,9 +13,9 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    variant: { 
-      control: 'select', 
-      options: [ 'primary', 'secondary', 'info', 'success', 'warning', 'danger' ],
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary', 'info', 'success', 'warning', 'danger'],
     },
     icon: {
       constrol: 'text',
@@ -34,45 +34,45 @@ const meta = {
     variant: 'primary',
     title: '',
     description: 'Lorem ispum dolor sit amet',
-    onClose: undefined
+    onClose: undefined,
   },
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof Alert>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {};
+export const Default: Story = {}
 
 export const CustomIcon: Story = {
   args: {
-    icon: 'home'
+    icon: 'home',
   },
-};
+}
 
 export const WithTitle: Story = {
   args: {
     title: 'Lorem ipsum',
   },
-};
+}
 
 export const Closable: Story = {
   args: {
     title: 'Lorem ipsum',
     onClose: () => {},
   },
-};
+}
 
 export const WithChildren: Story = {
   args: {
     title: 'Lorem ipsum',
-    children: 'Some content here'
+    children: 'Some content here',
   },
-};
+}
 
 export const Danger: Story = {
   args: {
     title: 'Lorem ipsum',
-    variant: 'danger'
+    variant: 'danger',
   },
-};
+}

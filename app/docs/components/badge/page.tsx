@@ -1,9 +1,5 @@
 import React from 'react'
 
 export default function Badge() {
-  return (
-    <div>
-      Badge content
-    </div>
-  )
+  return <div>Badge content</div>
 }

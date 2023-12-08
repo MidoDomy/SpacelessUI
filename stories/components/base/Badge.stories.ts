@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from '@/components/ui/badge'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -15,29 +15,31 @@ const meta = {
   argTypes: {
     children: {
       constrol: 'text',
-      description: 'This is default storybook option to change content of the component.',
+      description:
+        'This is default storybook option to change content of the component.',
     },
-    variant: { 
+    variant: {
       control: 'select',
-      options: [ 'primary', 'secondary', 'info', 'success', 'warning', 'danger' ],
+      options: ['primary', 'secondary', 'info', 'success', 'warning', 'danger'],
     },
-    absolute: { 
+    absolute: {
       control: 'boolean',
-      description: 'The element on the basis of which the badge is positioned should have position relative.',
+      description:
+        'The element on the basis of which the badge is positioned should have position relative.',
     },
-    top: { 
-      control: 'boolean',
-    },
-    bottom: { 
+    top: {
       control: 'boolean',
     },
-    left: { 
+    bottom: {
       control: 'boolean',
     },
-    right: { 
+    left: {
       control: 'boolean',
     },
-    rounded: { 
+    right: {
+      control: 'boolean',
+    },
+    rounded: {
       control: 'boolean',
     },
   },
@@ -46,16 +48,16 @@ const meta = {
     variant: 'primary',
     rounded: false,
   },
-} satisfies Meta<typeof Badge>;
+} satisfies Meta<typeof Badge>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {};
+export const Default: Story = {}
 
 export const Rounded: Story = {
   args: {
     rounded: true,
   },
-};
+}

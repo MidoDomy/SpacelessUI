@@ -22,6 +22,7 @@ const Code: React.FC<React.HTMLProps<HTMLDivElement>> = ({
     <button
       className="shrink-0"
       onClick={async () => await navigator.clipboard.writeText(`${children}`)}
+      aria-label='Copy'
     >
       <Icon name="copy" size="sm" />
     </button>

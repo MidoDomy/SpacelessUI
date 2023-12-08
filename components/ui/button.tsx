@@ -7,17 +7,17 @@ import { Icon } from '@/components/ui/icon'
 import { Loader } from '@/components/ui/loader'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center border rounded font-medium transition-colors focus:ring-1 focus:ring-offset-1 disabled:pointer-events-none disabled:opacity-60',
+  'inline-flex items-center justify-center border rounded font-medium transition-colors disabled:pointer-events-none disabled:opacity-60',
   {
     variants: {
       variant: {
         solid:
-          'text-white hover:text-white border-auto-600 bg-auto-600 hover:bg-auto-700 hover:border-auto-700 active:bg-auto-800 active:border-auto-800 focus:ring-auto-500',
+          'text-white hover:text-white border-auto-600 bg-auto-600 hover:bg-auto-700 hover:border-auto-700 active:bg-auto-800 active:border-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
         outline:
-          'border-auto-700 text-auto-700 hover:text-auto-700 hover:bg-auto-50 hover:border-auto-700 active:bg-auto-100 focus:ring-auto-500',
+          'border-auto-600 text-auto-600 hover:bg-auto-100 hover:border-auto-700 hover:text-auto-700 active:bg-auto-200 active:border-auto-800 active:text-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
         ghost:
-          'border-transparent text-auto-700 hover:text-auto-700 hover:bg-auto-50 active:bg-auto-100 focus:ring-auto-500',
-        link: 'text-auto-600 hover:text-auto-700',
+          'border-transparent text-auto-600 hover:bg-auto-100 hover:text-auto-700 active:bg-auto-200 active:text-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
+        link: 'text-auto-600 hover:text-auto-700 active:text-auto-800',
       },
       color: {
         primary: 'color-primary',
@@ -28,7 +28,7 @@ const buttonVariants = cva(
         danger: 'color-danger',
       },
       size: {
-        sm: 'gap-1.5 py-1.5 px-4 text-xs',
+        sm: 'gap-1.5 py-1.5 px-3.5 text-xs',
         md: 'gap-2 py-2 px-4 text-sm',
         lg: 'gap-2 py-2.5 px-6 text-base',
       },
@@ -54,6 +54,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  color?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
   icon?: string
   iconLeft?: string
   iconRight?: string

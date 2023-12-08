@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex justify-between items-center gap-3">
           {/* Logo */}
           <Link className="flex gap-2 font-medium text-inherit" href="/">
-            <img className="w-6" src="/images/logo.svg" alt="Logo" />
+            <img className="w-6 h-6" src="/images/logo.svg" alt="Logo" />
             Logo img
           </Link>
 

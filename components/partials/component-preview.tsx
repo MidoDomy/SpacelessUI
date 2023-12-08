@@ -62,7 +62,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
           <TabsContent className="mt-0" value="preview">
             <div
               ref={sourceDivRef}
-              className="min-h-[300px] flex justify-center items-center p-4 bg-slate-100 border rounded-md text-sm"
+              className="min-h-[220px] flex justify-center items-center p-4 bg-slate-100 border rounded-md text-sm"
             >
               {preview}
             </div>
@@ -72,15 +72,15 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
         {/* Usage */}
         {code && (
           <TabsContent className="mt-0" value="code">
-            <Code className="min-h-[300px]">{code}</Code>
+            <Code className="min-h-[220px]">{code}</Code>
           </TabsContent>
         )}
 
         {/* HTML is taken from inner HTML of preview */}
         {preview && (
           <TabsContent className="mt-0" value="html">
-            <Code className="min-h-[300px]">
-              {innerHTML.replace(/>/g, '>\n').replace(/</g, '\n<')}
+            <Code className="min-h-[220px]">
+              {innerHTML.replace(/>([^<]*)</g, '>\n$1\n<')}
             </Code>
           </TabsContent>
         )}

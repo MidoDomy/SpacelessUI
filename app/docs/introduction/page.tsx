@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function Introduction() {
-  return <div>Introduction content</div>
+  return <div>Design system based on radix-ui</div>
 }

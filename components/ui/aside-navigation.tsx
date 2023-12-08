@@ -22,6 +22,18 @@ const AsideNavigationGroup = React.forwardRef<
 ))
 AsideNavigationGroup.displayName = 'AsideNavigationGroup'
 
+const AsideNavigationSubGroup = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn('flex flex-col gap-1 pl-3', className)}
+    {...props}
+  />
+))
+AsideNavigationSubGroup.displayName = 'AsideNavigationSubGroup'
+
 const AsideNavigationGroupTitle = React.forwardRef<
   HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -49,6 +61,7 @@ AsideNavigationLink.displayName = 'AsideNavigationLink'
 export {
   AsideNavigation,
   AsideNavigationGroup,
+  AsideNavigationSubGroup,
   AsideNavigationGroupTitle,
   AsideNavigationLink,
 }

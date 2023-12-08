@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 
 import { cn } from '@/lib/utils'
+import { Icon } from '@/components/ui/icon'
 
 const Breadcrumbs = React.forwardRef<
   HTMLDivElement,
@@ -27,7 +28,7 @@ const BreadcrumbsItem = React.forwardRef<HTMLSpanElement, BreadcrumbsItemProps>(
       <Comp
         ref={ref}
         className={cn(
-          'inline-flex text-sm last:text-muted [a&]:text-inherit [a&]:hover:underline',
+          'inline-flex font-medium text-sm leading-none last:text-muted [a&]:text-inherit [a&]:hover:underline',
           className,
         )}
         {...props}
@@ -42,8 +43,8 @@ const BreadcrumbsDivider: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   children,
   ...props
 }) => (
-  <span className={cn('text-muted', className)} {...props}>
-    {children ? children : '/'}
+  <span className={cn('inline-flex text-muted', className)} {...props}>
+    {children ? children : <Icon name="chevron-right" size="sm" />}
   </span>
 )
 BreadcrumbsDivider.displayName = 'BreadcrumbsDivider'

@@ -17,7 +17,7 @@ const Code: React.FC<React.HTMLProps<HTMLDivElement>> = ({
     )}
     {...props}
   >
-    <code className="grow">{children}</code>
+    <code className="grow bg-transparent">{children}</code>
 
     <button
       className="shrink-0"

@@ -40,6 +40,10 @@ a:hover {
   color: theme("colors.link.hover");
 }
 
+code {
+  background-color: theme("colors.gray.100");
+}
+
 /* Swiper */
 .swiper-button-prev,
 .swiper-button-next {

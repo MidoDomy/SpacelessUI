@@ -14,7 +14,7 @@ const buttonVariants = cva(
         solid:
           'text-white hover:text-white border-auto-600 bg-auto-600 hover:bg-auto-700 hover:border-auto-700 active:bg-auto-800 active:border-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
         outline:
-          'border-auto-600 text-auto-600 hover:bg-auto-100 hover:border-auto-700 hover:text-auto-700 active:bg-auto-200 active:border-auto-800 active:text-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
+          'border-auto-600 text-auto-600 hover:bg-auto-600 hover:border-auto-600 hover:text-white active:bg-auto-700 active:border-auto-700 active:text-white focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
         ghost:
           'border-transparent text-auto-600 hover:bg-auto-100 hover:text-auto-700 active:bg-auto-200 active:text-auto-800 focus:ring-1 focus:ring-offset-1 focus:ring-auto-500',
         link: 'text-auto-600 hover:text-auto-700 active:text-auto-800',

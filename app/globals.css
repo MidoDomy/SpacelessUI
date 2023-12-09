@@ -24,6 +24,7 @@
 ::before,
 ::after {
   border-color: theme("colors.border");
+  scroll-behavior: smooth;
 }
 
 body {

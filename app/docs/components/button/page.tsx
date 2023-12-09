@@ -407,6 +407,19 @@ export default function ButtonDefault() {
           />
         </section>
 
+        {/* Styles section */}
+        <section id="styles" className="space-y-4">
+          <TypographyH2 className="pb-2 border-b">Styles</TypographyH2>
+          <TypographyP>
+            If you want the other component to have styles like a button, you
+            can achieve this with the <code>'asChild'</code> props or you can
+            export <code>'buttonVariants'</code> and use them in the class.
+          </TypographyP>
+
+          <Code>{`import { buttonVariants } from '@/components/ui/button'`}</Code>
+          <Code>{`<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>`}</Code>
+        </section>
+
         {/* Manualy */}
         <section id="manually" className="space-y-4">
           <TypographyH2 className="pb-2 border-b">Add manually</TypographyH2>
@@ -575,6 +588,7 @@ export { Button, buttonVariants }`}
                 As Child
               </AsideNavigationLink>
             </AsideNavigationSubGroup>
+            <AsideNavigationLink href="#styles">Styles</AsideNavigationLink>
             <AsideNavigationLink href="#manually">
               Add manually
             </AsideNavigationLink>

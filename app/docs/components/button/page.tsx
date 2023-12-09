@@ -90,16 +90,13 @@ export default function ButtonDefault() {
             <TableBody>
               <TableRow>
                 <TableCell>variant</TableCell>
-                <TableCell>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur, rerum?
-                </TableCell>
+                <TableCell>Specifies the button style.</TableCell>
                 <TableCell>'solid'</TableCell>
                 <TableCell>'solid' | 'outline' | 'ghost' | 'link'</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>color</TableCell>
-                <TableCell></TableCell>
+                <TableCell>Specifies the button color.</TableCell>
                 <TableCell>'primary'</TableCell>
                 <TableCell>
                   'primary' | 'secondary' | 'info' | 'success' | 'warning' |
@@ -127,19 +124,19 @@ export default function ButtonDefault() {
               <TableRow>
                 <TableCell>icon</TableCell>
                 <TableCell></TableCell>
-                <TableCell>' '</TableCell>
+                <TableCell>-</TableCell>
                 <TableCell>string</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>iconLeft</TableCell>
                 <TableCell></TableCell>
-                <TableCell>' '</TableCell>
+                <TableCell>-</TableCell>
                 <TableCell>string</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>iconRight</TableCell>
                 <TableCell></TableCell>
-                <TableCell>' '</TableCell>
+                <TableCell>-</TableCell>
                 <TableCell>string</TableCell>
               </TableRow>
               <TableRow>
@@ -156,7 +153,10 @@ export default function ButtonDefault() {
               </TableRow>
               <TableRow>
                 <TableCell>asChild</TableCell>
-                <TableCell></TableCell>
+                <TableCell>
+                  If it is set to true then the default tag is changed with the
+                  child tag that is used inside Button.
+                </TableCell>
                 <TableCell>false</TableCell>
                 <TableCell>boolean</TableCell>
               </TableRow>
@@ -321,7 +321,12 @@ export default function ButtonDefault() {
             preview={
               <div className="flex gap-2.5">
                 <Button rounded> Button </Button>
-                <Button icon="home" onlyIcon rounded aria-label='Button preview'></Button>
+                <Button
+                  icon="home"
+                  onlyIcon
+                  rounded
+                  aria-label="Button preview"
+                ></Button>
               </div>
             }
             code={`<Button rounded> Button </Button>
@@ -359,7 +364,9 @@ export default function ButtonDefault() {
         <section id="only-icon">
           <ComponentPreview
             title="Only icon"
-            preview={<Button icon="home" onlyIcon aria-label='Button preview'></Button>}
+            preview={
+              <Button icon="home" onlyIcon aria-label="Button preview"></Button>
+            }
             code={`<Button icon='home' onlyIcon></Button>`}
           />
         </section>
@@ -371,7 +378,13 @@ export default function ButtonDefault() {
             preview={
               <div className="flex gap-2.5">
                 <Button loading> Button </Button>
-                <Button icon="home" onlyIcon rounded loading aria-label='Button preview'></Button>
+                <Button
+                  icon="home"
+                  onlyIcon
+                  rounded
+                  loading
+                  aria-label="Button preview"
+                ></Button>
               </div>
             }
             code={`<Button loading> Button </Button>
@@ -562,7 +575,9 @@ export { Button, buttonVariants }`}
                 As Child
               </AsideNavigationLink>
             </AsideNavigationSubGroup>
-            <AsideNavigationLink href="#manually">Add manually</AsideNavigationLink>
+            <AsideNavigationLink href="#manually">
+              Add manually
+            </AsideNavigationLink>
           </AsideNavigationGroup>
         </AsideNavigation>
       </div>

@@ -5,20 +5,20 @@ import { cn } from '@/lib/utils'
 import { Icon } from '@/components/ui/icon'
 
 const alertVariants = cva(
-  'flex items-start gap-3 w-full rounded-lg border px-4 py-3',
+  'flex items-start gap-3 px-4 py-3 rounded-lg border border-auto-400 text-auto-700 bg-auto-50',
   {
     variants: {
-      variant: {
-        primary: 'border-primary-700 text-primary-700 bg-primary-50',
-        secondary: 'border-secondary-700 text-secondary-700 bg-secondary-50',
-        info: 'border-info-700 text-info-700 bg-info-50',
-        success: 'border-success-700 text-success-700 bg-success-50',
-        warning: 'border-warning-700 text-warning-700 bg-warning-50',
-        danger: 'border-danger-700 text-danger-700 bg-danger-50',
+      color: {
+        primary: 'color-primary',
+        secondary: 'color-secondary',
+        info: 'color-info',
+        success: 'color-success',
+        warning: 'color-warning',
+        danger: 'color-danger',
       },
     },
     defaultVariants: {
-      variant: 'primary',
+      color: 'primary',
     },
   },
 )
@@ -26,9 +26,8 @@ const alertVariants = cva(
 interface AlertProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof alertVariants> {
+  color?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'
   icon?: string
-  title?: string
-  description: string
   onClose?: () => void
 }
 
@@ -47,32 +46,18 @@ const setIcon = (variant: string | null | undefined) => {
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   (
-    {
-      className,
-      children,
-      variant,
-      icon = setIcon(variant),
-      title,
-      description,
-      onClose,
-      ...props
-    },
+    { className, children, color, icon = setIcon(color), onClose, ...props },
     ref,
   ) => (
     <div
       ref={ref}
       role="alert"
-      className={cn(alertVariants({ variant }), className)}
+      className={cn(alertVariants({ color }), className)}
       {...props}
     >
-      <Icon className={title ? 'mt-0.5' : undefined} name={icon} />
+      <Icon className="mt-0.5" name={icon} />
 
-      <div className="grow">
-        {title ? <h5 className="font-medium">{title}</h5> : null}
-        <div className="text-sm">{description}</div>
-
-        {children}
-      </div>
+      <div className="grow">{children}</div>
 
       {onClose && (
         <button type="button" onClick={onClose}>
@@ -84,4 +69,20 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 )
 Alert.displayName = 'Alert'
 
-export { Alert }
+const AlertTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h5 ref={ref} className={cn('font-medium', className)} {...props} />
+))
+AlertTitle.displayName = 'AlertTitle'
+
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn('text-sm', className)} {...props} />
+))
+AlertDescription.displayName = 'AlertDescription'
+
+export { Alert, AlertTitle, AlertDescription }

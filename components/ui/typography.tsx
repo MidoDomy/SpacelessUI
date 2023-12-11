@@ -72,6 +72,20 @@ const TypographyH5: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
 )
 TypographyH5.displayName = 'TypographyH5'
 
+const TypographyH6: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
+  className,
+  ...props
+}) => (
+  <h6
+    className={cn(
+      'scroll-m-20 text-base font-semibold tracking-tight',
+      className,
+    )}
+    {...props}
+  />
+)
+TypographyH6.displayName = 'TypographyH6'
+
 const TypographyP: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
   className,
   ...props
@@ -84,5 +98,6 @@ export {
   TypographyH3,
   TypographyH4,
   TypographyH5,
+  TypographyH6,
   TypographyP,
 }

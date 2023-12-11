@@ -10,6 +10,19 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
+  const components = [
+    { name: 'Accordion', url: 'accordion' },
+    { name: 'Alert', url: 'alert' },
+    { name: 'Aside navigation', url: 'aside-navigation' },
+    { name: 'Avatar', url: 'avatar' },
+    { name: 'Avatar group', url: 'avatar-group' },
+    { name: 'Badge', url: 'badge' },
+    { name: 'Badge group', url: 'badge-group' },
+    { name: 'Breadcrumbs', url: 'breadcrumbs' },
+    { name: 'Button', url: 'button' },
+    { name: 'Button group', url: 'button-group' },
+  ]
+
   return (
     <div className="grid grid-cols-12 gap-14">
       {/* Aside navigation (left) */}
@@ -30,27 +43,11 @@ export default function DashboardLayout({
           <AsideNavigationGroup>
             <AsideNavigationGroupTitle> Components </AsideNavigationGroupTitle>
 
-            <AsideNavigationLink href="/docs/components/accordion">
-              Accordion
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/alert">
-              Alert
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/aside-navigation">
-              Aside-navigation
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/avatar-group">
-              Avatar-group
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/avatar">
-              Avatar
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/badge">
-              Badge
-            </AsideNavigationLink>
-            <AsideNavigationLink href="/docs/components/button">
-              Button
-            </AsideNavigationLink>
+            {components.map((component) => (
+              <AsideNavigationLink href={`/docs/components/${component.url}`}>
+                {component.name}
+              </AsideNavigationLink>
+            ))}
           </AsideNavigationGroup>
         </AsideNavigation>
       </div>

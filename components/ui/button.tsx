@@ -112,10 +112,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ) : null}
 
         {/* Children content */}
-        <Slottable>{!onlyIcon && children}</Slottable>
+        <Slottable>{children}</Slottable>
 
         {/* Icon right */}
-        {iconRight && !onlyIcon && <Icon name={iconRight} size={size} />}
+        {iconRight && <Icon name={iconRight} size={size} />}
       </Comp>
     )
   },

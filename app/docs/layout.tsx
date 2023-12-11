@@ -11,8 +11,9 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex gap-24">
-      <div className="shrink-0">
+    <div className="grid grid-cols-12 gap-14">
+      {/* Aside navigation (left) */}
+      <div className="col-span-2">
         <AsideNavigation className="sticky top-4">
           {/* Getting started */}
           <AsideNavigationGroup>
@@ -54,7 +55,8 @@ export default function DashboardLayout({
         </AsideNavigation>
       </div>
 
-      <div className="grow flex gap-20">{children}</div>
+      {/* Main content */}
+      <div className="col-span-10 grid grid-cols-12 gap-14">{children}</div>
     </div>
   )
 }

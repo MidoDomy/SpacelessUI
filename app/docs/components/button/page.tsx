@@ -35,7 +35,7 @@ export default function ButtonPage() {
   return (
     <>
       {/* Page main content */}
-      <div className="grow space-y-10">
+      <div className="col-span-9 space-y-10">
         {/* Page intro info */}
         <div>
           <Breadcrumbs className="mb-5">
@@ -44,7 +44,7 @@ export default function ButtonPage() {
             <BreadcrumbsItem>Button</BreadcrumbsItem>
           </Breadcrumbs>
 
-          <TypographyH1>Button</TypographyH1>
+          <TypographyH1 className="mb-1">Button</TypographyH1>
           <TypographyP>
             The button is the basic component of every project.
           </TypographyP>
@@ -68,7 +68,7 @@ export default function ButtonDefault() {
           <TypographyH2 className="pb-2 border-b">Usage</TypographyH2>
 
           <Code>{`import { Button } from '@/components/ui/button'`}</Code>
-          <Code>{`<Button>Button</Button>`}</Code>
+          <Code>{`<Button>Content</Button>`}</Code>
         </section>
 
         {/* Props section */}
@@ -77,7 +77,8 @@ export default function ButtonDefault() {
 
           <Table>
             <TableCaption>
-              Besides these props, you can also use the default button props.
+              Besides these props, you can also use the default{' '}
+              <code>button</code> props.
             </TableCaption>
             <TableHeader>
               <TableRow>
@@ -560,7 +561,7 @@ export { Button, buttonVariants }`}
       </div>
 
       {/* Page content aside links */}
-      <div className="w-56 shrink-0">
+      <div className="col-span-3">
         <AsideNavigation className="sticky top-4">
           <AsideNavigationGroup>
             <AsideNavigationGroupTitle>Page content</AsideNavigationGroupTitle>

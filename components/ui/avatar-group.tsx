@@ -7,13 +7,13 @@ const avatarGroupVariants = cva(
   'inline-flex -space-x-4 [&>span:hover]:z-10 [&>span>div:first-child:hover]:shadow-lg',
   {
     variants: {
-      overlap: {
-        fromLeft: 'flex-row-reverse space-x-reverse',
-        fromRight: 'flex-row',
+      overlapFrom: {
+        left: 'flex-row-reverse space-x-reverse',
+        right: 'flex-row',
       },
     },
     defaultVariants: {
-      overlap: 'fromRight',
+      overlapFrom: 'right',
     },
   },
 )
@@ -24,10 +24,13 @@ interface AvatarGroupProps
 
 const AvatarGroup: React.FC<AvatarGroupProps> = ({
   className,
-  overlap,
+  overlapFrom,
   ...props
 }) => (
-  <div className={cn(avatarGroupVariants({ overlap }), className)} {...props} />
+  <div
+    className={cn(avatarGroupVariants({ overlapFrom }), className)}
+    {...props}
+  />
 )
 
 export { AvatarGroup }

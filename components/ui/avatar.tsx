@@ -14,6 +14,7 @@ const avatarVariants = cva('relative flex h-10 w-10 shrink-0 rounded-lg', {
       lg: 'h-14 w-14',
     },
     rounded: { true: 'rounded-full' },
+    bordered: { true: 'border-2' },
   },
   defaultVariants: {
     size: 'md',
@@ -24,10 +25,10 @@ const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
     VariantProps<typeof avatarVariants>
->(({ className, size, rounded, ...props }, ref) => (
+>(({ className, size, rounded, bordered, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
-    className={cn(avatarVariants({ size, rounded, className }))}
+    className={cn(avatarVariants({ size, rounded, bordered }), className)}
     {...props}
   />
 ))
@@ -66,6 +67,14 @@ AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 const AvatarAction: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
   ...props
-}) => <div className={cn('absolute bottom-0 right-0 -translate-x-1/4 -translate-y-1/4 flex', className)} {...props} />
+}) => (
+  <div
+    className={cn(
+      'absolute bottom-0 right-0 -translate-x-1/4 -translate-y-1/4 flex',
+      className,
+    )}
+    {...props}
+  />
+)
 
 export { Avatar, AvatarImage, AvatarFallback, AvatarAction }

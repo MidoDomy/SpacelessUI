@@ -28,8 +28,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
-import ComponentPreview from '@/components/partials/component-preview'
 import {
   Avatar,
   AvatarImage,
@@ -37,6 +35,8 @@ import {
   AvatarAction,
 } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+
+import ComponentPreview from '@/components/partials/component-preview'
 
 export default function AvatarPage() {
   return (
@@ -52,9 +52,6 @@ export default function AvatarPage() {
           </Breadcrumbs>
 
           <TypographyH1 className="mb-1">Avatar</TypographyH1>
-          <TypographyP>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, dolorem!
-          </TypographyP>
         </div>
 
         {/* Default section */}
@@ -111,7 +108,7 @@ export default function AvatarDefault() {
           {/* Main props */}
           <div>
             <TypographyH6 className="mb-2">Avatar</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use other{' '}
@@ -137,6 +134,12 @@ export default function AvatarDefault() {
                 </TableRow>
                 <TableRow>
                   <TableCell>rounded</TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>false</TableCell>
+                  <TableCell>boolean</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>bordered</TableCell>
                   <TableCell></TableCell>
                   <TableCell>false</TableCell>
                   <TableCell>boolean</TableCell>
@@ -215,18 +218,18 @@ export default function AvatarDefault() {
             id="size"
             title="Size"
             preview={
-              <div className='flex items-center gap-2.5'>
-                <Avatar size='sm'>
+              <div className="flex items-center gap-2.5">
+                <Avatar size="sm">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
-                <Avatar size='md'>
+                <Avatar size="md">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
-                <Avatar size='lg'>
+                <Avatar size="lg">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
@@ -253,18 +256,18 @@ export default function AvatarDefault() {
             id="rounded"
             title="Rounded"
             preview={
-              <div className='flex items-center gap-2.5'>
-                <Avatar size='sm' rounded>
+              <div className="flex items-center gap-2.5">
+                <Avatar size="sm" rounded>
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
-                <Avatar size='md' rounded>
+                <Avatar size="md" rounded>
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
 
-                <Avatar size='lg' rounded>
+                <Avatar size="lg" rounded>
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
@@ -291,12 +294,12 @@ export default function AvatarDefault() {
             id="action"
             title="Action"
             preview={
-              <div className='flex items-center gap-2.5'>
+              <div className="flex items-center gap-2.5">
                 <Avatar>
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                   <AvatarAction>
-                    <Badge color='success' status />
+                    <Badge color="success" status />
                   </AvatarAction>
                 </Avatar>
 
@@ -304,7 +307,7 @@ export default function AvatarDefault() {
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                   <AvatarAction>
-                    <Badge color='success' status />
+                    <Badge color="success" status />
                   </AvatarAction>
                 </Avatar>
               </div>
@@ -323,6 +326,34 @@ export default function AvatarDefault() {
   <AvatarAction>
     <Badge color='success' status />
   </AvatarAction>
+</Avatar>`}
+          />
+
+          {/* Bordered section */}
+          <ComponentPreview
+            id="bordered"
+            title="Bordered"
+            preview={
+              <div className="flex items-center gap-2.5">
+                <Avatar bordered>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+
+                <Avatar rounded bordered>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+              </div>
+            }
+            code={`<Avatar bordered>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+
+<Avatar rounded bordered>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
 </Avatar>`}
           />
         </section>
@@ -351,6 +382,7 @@ const avatarVariants = cva('relative flex h-10 w-10 shrink-0 rounded-lg', {
       lg: 'h-14 w-14',
     },
     rounded: { true: 'rounded-full' },
+    bordered: { true: 'border-2' },
   },
   defaultVariants: {
     size: 'md',
@@ -361,10 +393,10 @@ const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
     VariantProps<typeof avatarVariants>
->(({ className, size, rounded, ...props }, ref) => (
+>(({ className, size, rounded, bordered, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
-    className={cn(avatarVariants({ size, rounded, className }))}
+    className={cn(avatarVariants({ size, rounded, bordered }), className)}
     {...props}
   />
 ))
@@ -424,6 +456,9 @@ export { Avatar, AvatarImage, AvatarFallback, AvatarAction }`}
               <AsideNavigationLink href="#size">Size</AsideNavigationLink>
               <AsideNavigationLink href="#rounded">Rounded</AsideNavigationLink>
               <AsideNavigationLink href="#action">Action</AsideNavigationLink>
+              <AsideNavigationLink href="#bordered">
+                Bordered
+              </AsideNavigationLink>
             </AsideNavigationSubGroup>
             <AsideNavigationLink href="#manually">
               Add manually

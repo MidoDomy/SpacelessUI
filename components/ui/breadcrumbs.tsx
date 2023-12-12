@@ -28,7 +28,7 @@ const BreadcrumbsItem = React.forwardRef<HTMLSpanElement, BreadcrumbsItemProps>(
       <Comp
         ref={ref}
         className={cn(
-          'inline-flex font-medium text-sm leading-none last:text-muted [a&]:text-inherit [a&]:hover:underline',
+          'inline-flex font-medium text-sm leading-none last:text-muted last:font-normal [a&]:text-inherit [a&]:hover:underline',
           className,
         )}
         {...props}

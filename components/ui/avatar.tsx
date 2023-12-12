@@ -70,7 +70,7 @@ const AvatarAction: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => (
   <div
     className={cn(
-      'absolute bottom-0 right-0 -translate-x-1/4 -translate-y-1/4 flex',
+      'absolute bottom-1.5 right-1.5 translate-x-1/2 translate-y-1/2 flex',
       className,
     )}
     {...props}

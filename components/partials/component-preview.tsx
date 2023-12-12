@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Code } from '@/components/ui/code'
-import { TypographyH5 } from '@/components/ui/typography'
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLSpanElement> {
   title: string
@@ -36,7 +35,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
     <div {...props}>
       <Tabs defaultValue="preview">
         <div className="flex justify-between mb-4 border-b">
-          <TypographyH5>{title}</TypographyH5>
+          <div className="font-medium">{title}</div>
 
           <TabsList className="-mb-px">
             {preview && (

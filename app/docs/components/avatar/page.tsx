@@ -63,7 +63,7 @@ export default function AvatarPage() {
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
                 <AvatarAction>
-                  <Badge color="success" status />
+                  <Badge color="success" status bordered />
                 </AvatarAction>
               </Avatar>
             }
@@ -75,7 +75,7 @@ export default function AvatarDefault() {
       <AvatarImage src="https://github.com/shadcn.png" />
       <AvatarFallback>CN</AvatarFallback>
       <AvatarAction>
-        <Badge color="success" status />
+        <Badge color="success" status bordered />
       </AvatarAction>
     </Avatar>
   )
@@ -95,7 +95,7 @@ export default function AvatarDefault() {
   <AvatarImage src="https://github.com/shadcn.png" />
   <AvatarFallback>CN</AvatarFallback>
   <AvatarAction>
-    <Badge color="success" status />
+    <Badge color="success" status bordered />
   </AvatarAction>
 </Avatar>`}
           </Code>
@@ -299,7 +299,7 @@ export default function AvatarDefault() {
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                   <AvatarAction>
-                    <Badge color="success" status />
+                    <Badge color="success" status bordered />
                   </AvatarAction>
                 </Avatar>
 
@@ -307,7 +307,7 @@ export default function AvatarDefault() {
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback>CN</AvatarFallback>
                   <AvatarAction>
-                    <Badge color="success" status />
+                    <Badge color="success" status bordered />
                   </AvatarAction>
                 </Avatar>
               </div>
@@ -316,7 +316,7 @@ export default function AvatarDefault() {
   <AvatarImage src="https://github.com/shadcn.png" />
   <AvatarFallback>CN</AvatarFallback>
   <AvatarAction>
-    <Badge color='success' status />
+    <Badge color='success' status bordered />
   </AvatarAction>
 </Avatar>
 
@@ -324,7 +324,7 @@ export default function AvatarDefault() {
   <AvatarImage src="https://github.com/shadcn.png" />
   <AvatarFallback>CN</AvatarFallback>
   <AvatarAction>
-    <Badge color='success' status />
+    <Badge color='success' status bordered />
   </AvatarAction>
 </Avatar>`}
           />

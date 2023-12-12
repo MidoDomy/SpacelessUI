@@ -18,6 +18,16 @@
       1px 1px 0 rgba(0, 0, 0, 0.2),
       -1px -1px 0 rgba(0, 0, 0, 0.2);
   }
+  
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 *,

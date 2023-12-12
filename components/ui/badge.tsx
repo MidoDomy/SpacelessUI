@@ -22,7 +22,7 @@ const badgeVariants = cva(
       bottom: { true: 'bottom-0 translate-y-1/2' },
       rounded: { true: 'rounded-full' },
       bordered: { true: 'border-2 border-white' },
-      status: { true: 'rounded-full p-1' },
+      status: { true: 'rounded-full p-[4.5px]' },
     },
     defaultVariants: {
       color: 'primary',

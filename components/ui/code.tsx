@@ -30,7 +30,7 @@ const Code: React.FC<React.HTMLProps<HTMLDivElement>> = ({
       )}
       {...props}
     >
-      <code className="grow bg-transparent">{children}</code>
+      <code className="grow whitespace-pre bg-transparent overflow-auto no-scrollbar ">{children}</code>
 
       <div className="relative">
         <button

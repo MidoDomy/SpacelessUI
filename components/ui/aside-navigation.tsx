@@ -6,7 +6,7 @@ const AsideNavigation = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <aside ref={ref} className={cn('', className)} {...props} />
+  <aside ref={ref} className={cn('flex flex-col', className)} {...props} />
 ))
 AsideNavigation.displayName = 'AsideNavigation'
 
@@ -16,7 +16,7 @@ const AsideNavigationGroup = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col gap-1 pb-6', className)}
+    className={cn('flex flex-col pb-5 last:pb-0', className)}
     {...props}
   />
 ))
@@ -26,11 +26,7 @@ const AsideNavigationSubGroup = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn('flex flex-col gap-1 pl-3', className)}
-    {...props}
-  />
+  <div ref={ref} className={cn('flex flex-col pl-2.5', className)} {...props} />
 ))
 AsideNavigationSubGroup.displayName = 'AsideNavigationSubGroup'
 
@@ -40,19 +36,28 @@ const AsideNavigationGroupTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h4
     ref={ref}
-    className={cn('mb-1 font-medium text-sm', className)}
+    className={cn('mb-1.5 font-medium text-sm', className)}
     {...props}
   />
 ))
 AsideNavigationGroupTitle.displayName = 'AsideNavigationGroupTitle'
 
+interface AsideNavigationLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  active?: boolean
+}
+
 const AsideNavigationLink = React.forwardRef<
   HTMLAnchorElement,
-  React.AnchorHTMLAttributes<HTMLAnchorElement>
->(({ className, ...props }, ref) => (
+  AsideNavigationLinkProps
+>(({ className, active, ...props }, ref) => (
   <a
     ref={ref}
-    className={cn('py-0.5 text-sm text-muted hover:text-link-hover', className)}
+    className={cn(
+      'mb-1 last:mb-0 p-0.5 text-sm text-muted hover:underline active:text-primary-700',
+      active ? 'text-primary-700' : 'hover:text-muted',
+      className,
+    )}
     {...props}
   />
 ))

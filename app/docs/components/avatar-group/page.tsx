@@ -133,7 +133,8 @@ import { AvatarGroup } from '@/components/ui/avatar-group'`}
 
           <Table>
             <TableCaption>
-              Besides these props, you can also use other div props.
+              Besides these props, you can also use other <code>div</code>{' '}
+              props.
             </TableCaption>
             <TableHeader>
               <TableRow>

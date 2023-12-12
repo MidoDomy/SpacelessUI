@@ -51,7 +51,9 @@ a:hover {
 }
 
 code {
-  background-color: theme("colors.gray.100");
+  padding: 0 4px;
+  background-color: theme("colors.gray.200");
+  border-radius: 2px;
 }
 
 /* Swiper */

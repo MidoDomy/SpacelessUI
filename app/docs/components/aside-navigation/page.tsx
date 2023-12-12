@@ -13,12 +13,6 @@ import {
   TypographyH6,
   TypographyP,
 } from '@/components/ui/typography'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
 import { Code } from '@/components/ui/code'
 import {
   Breadcrumbs,
@@ -47,13 +41,12 @@ export default function AsideNavigationPage() {
           <Breadcrumbs className="mb-5">
             <BreadcrumbsItem>Docs</BreadcrumbsItem>
             <BreadcrumbsDivider />
-            <BreadcrumbsItem>Accordion</BreadcrumbsItem>
+            <BreadcrumbsItem>Aside navigation</BreadcrumbsItem>
           </Breadcrumbs>
 
-          <TypographyH1 className="mb-1">Accordion</TypographyH1>
+          <TypographyH1 className="mb-1">Aside navigation</TypographyH1>
           <TypographyP>
-            Used to display content through which the user can navigate faster
-            and easier.
+            A collection of links for navigating websites.
           </TypographyP>
         </div>
 
@@ -62,41 +55,49 @@ export default function AsideNavigationPage() {
           <ComponentPreview
             title="Default"
             preview={
-              <Accordion className="w-full" type="single">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
+              <AsideNavigation>
+                <AsideNavigationGroup>
+                  <AsideNavigationGroupTitle>
+                    Group title
+                  </AsideNavigationGroupTitle>
 
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                  <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                  <AsideNavigationLink href="#" active>
+                    Link two
+                  </AsideNavigationLink>
+
+                  <AsideNavigationSubGroup>
+                    <AsideNavigationLink href="#">
+                      SubGroup link one
+                    </AsideNavigationLink>
+                    <AsideNavigationLink href="#">
+                      SubGroup link two
+                    </AsideNavigationLink>
+                  </AsideNavigationSubGroup>
+
+                  <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+                </AsideNavigationGroup>
+              </AsideNavigation>
             }
-            code={`import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+            code={`import { AsideNavigation, AsideNavigationGroup, AsideNavigationSubGroup, AsideNavigationGroupTitle, AsideNavigationLink } from '@/components/ui/aside-navigation'
 
-export default function AccordionDefault() {
+export default function AsideNavigationDefault() {
   return (
-    <Accordion className='w-full' type="single">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
+    <AsideNavigation>
+      <AsideNavigationGroup>
+        <AsideNavigationGroupTitle>Group title</AsideNavigationGroupTitle>
 
-      <AccordionItem value="item-2">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+        <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+        <AsideNavigationLink href='#' active>Link two</AsideNavigationLink>
+
+        <AsideNavigationSubGroup>
+          <AsideNavigationLink href='#'>SubGroup link one</AsideNavigationLink>
+          <AsideNavigationLink href='#'>SubGroup link two</AsideNavigationLink>
+        </AsideNavigationSubGroup>
+
+        <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+      </AsideNavigationGroup>
+    </AsideNavigation>
   )
 }`}
           />
@@ -107,17 +108,24 @@ export default function AccordionDefault() {
           <TypographyH2 className="pb-2 border-b">Usage</TypographyH2>
 
           <Code>
-            {`import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'`}
+            {`import { AsideNavigation, AsideNavigationGroup, AsideNavigationSubGroup, AsideNavigationGroupTitle, AsideNavigationLink } from '@/components/ui/aside-navigation'`}
           </Code>
           <Code>
-            {`<Accordion className="w-full" type="single" collapsible>
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+            {`<AsideNavigation>
+  <AsideNavigationGroup>
+    <AsideNavigationGroupTitle>Group title</AsideNavigationGroupTitle>
+
+    <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+    <AsideNavigationLink href='#' active>Link two</AsideNavigationLink>
+
+    <AsideNavigationSubGroup>
+      <AsideNavigationLink href='#'>SubGroup link one</AsideNavigationLink>
+      <AsideNavigationLink href='#'>SubGroup link two</AsideNavigationLink>
+    </AsideNavigationSubGroup>
+
+    <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+  </AsideNavigationGroup>
+</AsideNavigation>`}
           </Code>
         </section>
 
@@ -125,15 +133,12 @@ export default function AccordionDefault() {
         <section id="props" className="space-y-5">
           <TypographyH2 className="pb-2 border-b">Props</TypographyH2>
 
-          {/* Main props */}
+          {/* Link props */}
           <div>
-            <TypographyH6 className="mb-2">Accordion</TypographyH6>
+            <TypographyH6 className="mb-2">Aside navigation link</TypographyH6>
             <Table>
               <TableCaption>
-                Besides these props, you can also use other{' '}
-                <a href="https://www.radix-ui.com/primitives/docs/components/accordion#root">
-                  radix-ui accordion
-                </a>{' '}
+                Besides these props, you can also use other <code>a</code>{' '}
                 props.
               </TableCaption>
               <TableHeader>
@@ -146,87 +151,12 @@ export default function AccordionDefault() {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell>type*</TableCell>
+                  <TableCell>active</TableCell>
                   <TableCell></TableCell>
-                  <TableCell>-</TableCell>
-                  <TableCell>'single' | 'multiple'</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>collapsible</TableCell>
-                  <TableCell>
-                    It is used for type="single" if you want to be able to close
-                    all collapse items.
-                  </TableCell>
                   <TableCell>false</TableCell>
                   <TableCell>boolean</TableCell>
                 </TableRow>
-                <TableRow>
-                  <TableCell>defaultValue</TableCell>
-                  <TableCell>
-                    All items located here by default will be opened.
-                  </TableCell>
-                  <TableCell>[ ]</TableCell>
-                  <TableCell>string [ ]</TableCell>
-                </TableRow>
               </TableBody>
-            </Table>
-          </div>
-
-          {/* Item props */}
-          <div>
-            <TypographyH6 className="mb-2">Accordion item</TypographyH6>
-            <Table>
-              <TableCaption>
-                Besides these props, you can also use other{' '}
-                <a href="https://www.radix-ui.com/primitives/docs/components/accordion#item">
-                  radix-ui accordion item
-                </a>{' '}
-                props.
-              </TableCaption>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Description</TableHead>
-                  <TableHead>Default</TableHead>
-                  <TableHead>Type</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>value*</TableCell>
-                  <TableCell></TableCell>
-                  <TableCell>-</TableCell>
-                  <TableCell>string</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-
-          {/* Trigger props */}
-          <div>
-            <TypographyH6 className="mb-2">Accordion trigger</TypographyH6>
-            <Table>
-              <TableCaption>
-                Besides these props, you can also use other{' '}
-                <a href="https://www.radix-ui.com/primitives/docs/components/accordion#trigger">
-                  radix-ui accordion trigger
-                </a>{' '}
-                props.
-              </TableCaption>
-            </Table>
-          </div>
-
-          {/* Content props */}
-          <div>
-            <TypographyH6 className="mb-2">Accordion content</TypographyH6>
-            <Table>
-              <TableCaption>
-                Besides these props, you can also use other{' '}
-                <a href="https://www.radix-ui.com/primitives/docs/components/accordion#content">
-                  radix-ui accordion content
-                </a>{' '}
-                props.
-              </TableCaption>
             </Table>
           </div>
         </section>
@@ -235,212 +165,132 @@ export default function AccordionDefault() {
         <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
 
-          {/* Single section */}
+          {/* Standard section */}
           <ComponentPreview
-            id="single"
-            title="Single"
+            id="standard"
+            title="Standard"
             preview={
-              <Accordion className="w-full" type="single">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <AsideNavigation>
+                <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                <AsideNavigationLink href="#">Link two</AsideNavigationLink>
+                <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+              </AsideNavigation>
             }
-            code={`<Accordion className="w-full" type="single">
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="item-2">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="item-3">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+            code={`<AsideNavigation>
+  <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+  <AsideNavigationLink href='#'>Link two</AsideNavigationLink>
+  <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+</AsideNavigation>`}
           />
 
-          {/* Multiple section */}
+          {/* Groups section */}
           <ComponentPreview
-            id="multiple"
-            title="Multiple"
+            id="groups"
+            title="Groups"
             preview={
-              <Accordion className="w-full" type="multiple">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
+              <AsideNavigation>
+                <AsideNavigationGroup>
+                  <AsideNavigationGroupTitle>
+                    Group one
+                  </AsideNavigationGroupTitle>
 
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                  <AsideNavigationLink href="#">Link two</AsideNavigationLink>
+                  <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+                </AsideNavigationGroup>
 
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                <AsideNavigationGroup>
+                  <AsideNavigationGroupTitle>
+                    Group two
+                  </AsideNavigationGroupTitle>
+
+                  <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                  <AsideNavigationLink href="#">Link two</AsideNavigationLink>
+                  <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+                </AsideNavigationGroup>
+              </AsideNavigation>
             }
-            code={`<Accordion className="w-full" type="multiple">
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
+            code={`<AsideNavigation>
+  <AsideNavigationGroup>
+    <AsideNavigationGroupTitle>Group one title</AsideNavigationGroupTitle>
 
-  <AccordionItem value="item-2">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
+    <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+    <AsideNavigationLink href='#'>Link two</AsideNavigationLink>
+    <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+  </AsideNavigationGroup>
 
-  <AccordionItem value="item-3">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+  <AsideNavigationGroup>
+    <AsideNavigationGroupTitle>Group two title</AsideNavigationGroupTitle>
+
+    <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+    <AsideNavigationLink href='#'>Link two</AsideNavigationLink>
+    <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+  </AsideNavigationGroup>
+</AsideNavigation>`}
           />
 
-          {/* Collapsible section */}
+          {/* SubGroup section */}
           <ComponentPreview
-            id="collapsible"
-            title="Collapsible"
+            id="subgroup"
+            title="SubGroup"
             preview={
-              <Accordion className="w-full" type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
+              <AsideNavigation>
+                <AsideNavigationGroup>
+                  <AsideNavigationGroupTitle>
+                    Group title
+                  </AsideNavigationGroupTitle>
 
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
+                  <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                  <AsideNavigationLink href="#">Link two</AsideNavigationLink>
 
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                  <AsideNavigationSubGroup>
+                    <AsideNavigationLink href="#">
+                      SubGroup link one
+                    </AsideNavigationLink>
+                    <AsideNavigationLink href="#">
+                      SubGroup link two
+                    </AsideNavigationLink>
+                  </AsideNavigationSubGroup>
+
+                  <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+                </AsideNavigationGroup>
+              </AsideNavigation>
             }
-            code={`<Accordion className="w-full" type="single" collapsible>
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
+            code={`<AsideNavigation>
+  <AsideNavigationGroup>
+    <AsideNavigationGroupTitle>Group title</AsideNavigationGroupTitle>
 
-  <AccordionItem value="item-2">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
+    <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+    <AsideNavigationLink href='#'>Link two</AsideNavigationLink>
 
-  <AccordionItem value="item-3">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+    <AsideNavigationSubGroup>
+      <AsideNavigationLink href='#'>SubGroup link one</AsideNavigationLink>
+      <AsideNavigationLink href='#'>SubGroup link two</AsideNavigationLink>
+    </AsideNavigationSubGroup>
+
+    <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+  </AsideNavigationGroup>
+</AsideNavigation>`}
           />
 
-          {/* Default value section */}
+          {/* Active link section */}
           <ComponentPreview
-            id="default-value"
-            title="Default value"
+            id="active-link"
+            title="Active link"
             preview={
-              <Accordion className="w-full" type="single" defaultValue="item-1">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes. It adheres to the WAI-ARIA design pattern.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <AsideNavigation>
+                <AsideNavigationLink href="#">Link one</AsideNavigationLink>
+                <AsideNavigationLink href="#" active>
+                  Link two
+                </AsideNavigationLink>
+                <AsideNavigationLink href="#">Link three</AsideNavigationLink>
+              </AsideNavigation>
             }
-            code={`<Accordion className="w-full" type="single" defaultValue="item-1">
-  <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="item-2">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-
-  <AccordionItem value="item-3">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+            code={`<AsideNavigation>
+  <AsideNavigationLink href='#'>Link one</AsideNavigationLink>
+  <AsideNavigationLink href='#' active>Link two</AsideNavigationLink>
+  <AsideNavigationLink href='#'>Link three</AsideNavigationLink>
+</AsideNavigation>`}
           />
         </section>
 
@@ -452,76 +302,78 @@ export default function AccordionDefault() {
           </TypographyP>
 
           <Code>
-            {`'use client'
-
-import * as React from 'react'
-import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { Icon } from '@/components/ui/icon'
+            {`import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-const Accordion = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
+const AsideNavigation = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Root
+  <aside ref={ref} className={cn('flex flex-col', className)} {...props} />
+))
+AsideNavigation.displayName = 'AsideNavigation'
+
+const AsideNavigationGroup = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
     ref={ref}
-    className={cn('border rounded-lg overflow-hidden', className)}
+    className={cn('flex flex-col pb-5 last:pb-0', className)}
     {...props}
   />
 ))
-Accordion.displayName = 'Accordion'
+AsideNavigationGroup.displayName = 'AsideNavigationGroup'
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+const AsideNavigationSubGroup = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
+  <div ref={ref} className={cn('flex flex-col pl-2.5', className)} {...props} />
+))
+AsideNavigationSubGroup.displayName = 'AsideNavigationSubGroup'
+
+const AsideNavigationGroupTitle = React.forwardRef<
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h4
     ref={ref}
-    className={cn('border-b last:border-0', className)}
+    className={cn('mb-1.5 font-medium text-sm', className)}
     {...props}
   />
 ))
-AccordionItem.displayName = 'AccordionItem'
+AsideNavigationGroupTitle.displayName = 'AsideNavigationGroupTitle'
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        'flex flex-1 items-center justify-between py-3.5 px-5 font-medium transition-all hover:bg-primary-50 [&[data-state=open]]:bg-primary-50 [&[data-state=open]]:text-primary-700 [&[data-state=open]>.icon]:rotate-180',
-        className,
-      )}
-      {...props}
-    >
-      <span>{children}</span>
+interface AsideNavigationLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  active?: boolean
+}
 
-      <Icon name="chevron-down" className="transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
-
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
+const AsideNavigationLink = React.forwardRef<
+  HTMLAnchorElement,
+  AsideNavigationLinkProps
+>(({ className, active, ...props }, ref) => (
+  <a
     ref={ref}
-    className="overflow-hidden transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className={cn(
+      'mb-1 last:mb-0 p-0.5 text-sm text-muted hover:underline active:text-primary-700',
+      active ? 'text-primary-700' : 'hover:text-muted',
+      className,
+    )}
     {...props}
-  >
-    <div className={cn('px-5 py-4 border-t text-sm', className)}>
-      {children}
-    </div>
-  </AccordionPrimitive.Content>
+  />
 ))
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+AsideNavigationLink.displayName = 'AsideNavigationLink'
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }`}
+export {
+  AsideNavigation,
+  AsideNavigationGroup,
+  AsideNavigationSubGroup,
+  AsideNavigationGroupTitle,
+  AsideNavigationLink,
+}`}
           </Code>
         </section>
       </div>
@@ -537,15 +389,15 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }`}
             <AsideNavigationLink href="#props">Props</AsideNavigationLink>
             <AsideNavigationLink href="#examples">Examples</AsideNavigationLink>
             <AsideNavigationSubGroup>
-              <AsideNavigationLink href="#single">Single</AsideNavigationLink>
-              <AsideNavigationLink href="#multiple">
-                Multiple
+              <AsideNavigationLink href="#standard">
+                Standard
               </AsideNavigationLink>
-              <AsideNavigationLink href="#collapsible">
-                Collapsible
+              <AsideNavigationLink href="#groups">Groups</AsideNavigationLink>
+              <AsideNavigationLink href="#subgroup">
+                SubGroup
               </AsideNavigationLink>
-              <AsideNavigationLink href="#default-value">
-                Default value
+              <AsideNavigationLink href="#active-link">
+                Active link
               </AsideNavigationLink>
             </AsideNavigationSubGroup>
             <AsideNavigationLink href="#manually">

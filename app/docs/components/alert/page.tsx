@@ -149,13 +149,12 @@ export default function AlertDefault() {
         </section>
 
         {/* Examples */}
-        <section id="examples">
+        <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
-        </section>
 
-        {/* Colors section */}
-        <section id="colors">
+          {/* Colors section */}
           <ComponentPreview
+            id="colors"
             title="Colors"
             preview={
               <div className="flex flex-col gap-2.5">
@@ -251,11 +250,10 @@ export default function AlertDefault() {
   </AlertDescription>
 </Alert>`}
           />
-        </section>
 
-        {/* Closable section */}
-        <section id="closable">
+          {/* Closable section */}
           <ComponentPreview
+            id="closable"
             title="Closable"
             preview={
               <Alert onClose={() => {}}>
@@ -274,11 +272,10 @@ export default function AlertDefault() {
   </AlertDescription>
 </Alert>`}
           />
-        </section>
 
-        {/* Custom icon section */}
-        <section id="custom-icon">
+          {/* Custom icon section */}
           <ComponentPreview
+            id="custom-icon"
             title="Custom icon"
             preview={
               <Alert icon="chevron-right">

@@ -123,13 +123,12 @@ import { Badge } from '@/components/ui/badge'`}
         </section>
 
         {/* Examples */}
-        <section id="examples">
+        <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
-        </section>
 
-        {/* Colors section */}
-        <section id="colors">
+          {/* Colors section */}
           <ComponentPreview
+            id="colors"
             title="Colors"
             preview={
               <div className="flex flex-col gap-2.5">
@@ -179,11 +178,10 @@ import { Badge } from '@/components/ui/badge'`}
   <Badge color="danger">Danger</Badge> Badge group text here
 </BadgeGroup>`}
           />
-        </section>
 
-        {/* Rounded section */}
-        <section id="rounded">
+          {/* Rounded section */}
           <ComponentPreview
+            id="rounded"
             title="Rounded"
             preview={
               <div className="flex flex-col gap-2.5">
@@ -267,11 +265,10 @@ import { Badge } from '@/components/ui/badge'`}
   Badge group text here
 </BadgeGroup>`}
           />
-        </section>
 
-        {/* Status section */}
-        <section id="status">
+          {/* Status section */}
           <ComponentPreview
+            id="status"
             title="Status"
             preview={
               <div className="flex flex-col gap-2.5">

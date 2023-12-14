@@ -21,6 +21,7 @@ export default function DashboardLayout({
     { name: 'Breadcrumbs', url: 'breadcrumbs' },
     { name: 'Button', url: 'button' },
     { name: 'Button group', url: 'button-group' },
+    { name: 'Card', url: 'card' },
   ]
 
   return (

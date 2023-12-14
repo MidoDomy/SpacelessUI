@@ -157,13 +157,12 @@ export default function BadgeDefault() {
         </section>
 
         {/* Examples */}
-        <section id="examples">
+        <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
-        </section>
 
-        {/* Colors section */}
-        <section id="colors">
+          {/* Colors section */}
           <ComponentPreview
+            id="colors"
             title="Colors"
             preview={
               <div className="flex gap-2.5">
@@ -182,11 +181,10 @@ export default function BadgeDefault() {
 <Badge color='warning'>Warning</Badge>
 <Badge color='danger'>Danger</Badge>`}
           />
-        </section>
 
-        {/* Rounded section */}
-        <section id="rounded">
+          {/* Rounded section */}
           <ComponentPreview
+            id="rounded"
             title="Rounded"
             preview={
               <div className="flex gap-2.5">
@@ -217,11 +215,10 @@ export default function BadgeDefault() {
 <Badge color="warning" rounded>Warning</Badge>
 <Badge color="danger" rounded>Danger</Badge>`}
           />
-        </section>
 
-        {/* Position section */}
-        <section id="position">
+          {/* Position section */}
           <ComponentPreview
+            id="position"
             title="Position"
             preview={
               <div className="flex gap-7">
@@ -302,11 +299,10 @@ export default function BadgeDefault() {
   <Badge color='danger' rounded absolute bottom right>1</Badge>
 </Button>`}
           />
-        </section>
 
-        {/* Bordered section */}
-        <section id="bordered">
+          {/* Bordered section */}
           <ComponentPreview
+            id="bordered"
             title="Bordered"
             preview={
               <div className="flex gap-2.5">
@@ -330,11 +326,10 @@ export default function BadgeDefault() {
   <Badge color='danger' rounded bordered absolute top right>1</Badge>
 </Button>`}
           />
-        </section>
 
-        {/* Status section */}
-        <section id="status">
+          {/* Status section */}
           <ComponentPreview
+            id="status"
             title="Status"
             preview={
               <div className="flex items-center gap-2.5">

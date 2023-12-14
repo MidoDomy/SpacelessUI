@@ -166,13 +166,12 @@ export default function ButtonDefault() {
         </section>
 
         {/* Examples */}
-        <section id="examples">
+        <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
-        </section>
 
-        {/* Solid section */}
-        <section id="solid">
+          {/* Solid section */}
           <ComponentPreview
+            id="solid"
             title="Solid"
             preview={
               <div className="flex gap-2.5">
@@ -191,11 +190,10 @@ export default function ButtonDefault() {
 <Button color='warning'>Warning</Button>
 <Button color='danger'>Danger</Button>`}
           />
-        </section>
 
-        {/* Outline section */}
-        <section id="outline">
+          {/* Outline section */}
           <ComponentPreview
+            id="outline"
             title="Outline"
             preview={
               <div className="flex gap-2.5">
@@ -226,11 +224,10 @@ export default function ButtonDefault() {
 <Button color='warning' variant='outline'>Warning</Button>
 <Button color='danger' variant='outline'>Danger</Button>`}
           />
-        </section>
 
-        {/* Ghost section */}
-        <section id="ghost">
+          {/* Ghost section */}
           <ComponentPreview
+            id="ghost"
             title="Ghost"
             preview={
               <div className="flex gap-2.5">
@@ -261,11 +258,10 @@ export default function ButtonDefault() {
 <Button color='warning' variant='ghost'>Warning</Button>
 <Button color='danger' variant='ghost'>Danger</Button>`}
           />
-        </section>
 
-        {/* Link section */}
-        <section id="link">
+          {/* Link section */}
           <ComponentPreview
+            id="link"
             title="Link"
             preview={
               <div className="flex gap-5">
@@ -296,11 +292,10 @@ export default function ButtonDefault() {
 <Button color='warning' variant='link'>Warning</Button>
 <Button color='danger' variant='link'>Danger</Button>`}
           />
-        </section>
 
-        {/* Size section */}
-        <section id="size">
+          {/* Size section */}
           <ComponentPreview
+            id="size"
             title="Size"
             preview={
               <div className="flex items-center gap-2.5">
@@ -313,11 +308,10 @@ export default function ButtonDefault() {
 <Button size='md'>Default</Button>
 <Button size='lg'>Large</Button>`}
           />
-        </section>
 
-        {/* Rounded section */}
-        <section id="rounded">
+          {/* Rounded section */}
           <ComponentPreview
+            id="rounded"
             title="Rounded"
             preview={
               <div className="flex gap-2.5">
@@ -333,20 +327,18 @@ export default function ButtonDefault() {
             code={`<Button rounded> Button </Button>
 <Button icon='home' onlyIcon rounded></Button>`}
           />
-        </section>
 
-        {/* Full width section */}
-        <section id="full-width">
+          {/* Full width section */}
           <ComponentPreview
+            id="full-width"
             title="Full width"
             preview={<Button fullWidth> Full width </Button>}
             code={`<Button fullWidth> Full width </Button>`}
           />
-        </section>
 
-        {/* Icon section */}
-        <section id="icon">
+          {/* Icon section */}
           <ComponentPreview
+            id="icon"
             title="Icon"
             preview={
               <div className="flex gap-2.5">
@@ -359,22 +351,20 @@ export default function ButtonDefault() {
 <Button iconLeft='chevron-left'> Icon left </Button>
 <Button iconRight='chevron-right'> Icon Right </Button>`}
           />
-        </section>
 
-        {/* Only icon section */}
-        <section id="only-icon">
+          {/* Only icon section */}
           <ComponentPreview
+            id="only-icon"
             title="Only icon"
             preview={
               <Button icon="home" onlyIcon aria-label="Button preview"></Button>
             }
             code={`<Button icon='home' onlyIcon></Button>`}
           />
-        </section>
 
-        {/* Loading section */}
-        <section id="loading">
+          {/* Loading section */}
           <ComponentPreview
+            id="loading"
             title="Loading"
             preview={
               <div className="flex gap-2.5">
@@ -391,11 +381,10 @@ export default function ButtonDefault() {
             code={`<Button loading> Button </Button>
 <Button icon='home' onlyIcon rounded loading></Button>`}
           />
-        </section>
 
-        {/* As child section */}
-        <section id="as-child">
+          {/* As child section */}
           <ComponentPreview
+            id="as-child"
             title="As Child"
             preview={
               <Button asChild>

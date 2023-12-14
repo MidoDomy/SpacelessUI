@@ -124,13 +124,12 @@ import { Button } from '@/components/ui/button'`}
         </section>
 
         {/* Examples */}
-        <section id="examples">
+        <section id="examples" className="space-y-6">
           <TypographyH2 className="pb-2 border-b">Examples</TypographyH2>
-        </section>
 
-        {/* Horizontal section */}
-        <section id="horizontal">
+          {/* Horizontal section */}
           <ComponentPreview
+            id="horizontal"
             title="Horizontal"
             preview={
               <ButtonGroup direction="horizontal">
@@ -145,11 +144,10 @@ import { Button } from '@/components/ui/button'`}
   <Button variant='outline'>Primary</Button>
 </ButtonGroup>`}
           />
-        </section>
 
-        {/* Vertical section */}
-        <section id="vertical">
+          {/* Vertical section */}
           <ComponentPreview
+            id="vertical"
             title="Vertical"
             preview={
               <ButtonGroup direction="vertical">

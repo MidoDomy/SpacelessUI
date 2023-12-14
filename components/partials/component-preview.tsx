@@ -61,7 +61,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
           <TabsContent className="mt-0" value="preview">
             <div
               ref={sourceDivRef}
-              className="min-h-[220px] flex justify-center items-center p-4 bg-slate-100 border rounded-md text-sm"
+              className="min-h-[220px] flex justify-center items-center p-4 bg-slate-100 border rounded-md"
             >
               {preview}
             </div>

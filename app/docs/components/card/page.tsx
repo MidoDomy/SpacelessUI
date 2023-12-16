@@ -3,7 +3,6 @@ import React from 'react'
 import {
   AsideNavigation,
   AsideNavigationGroup,
-  AsideNavigationSubGroup,
   AsideNavigationGroupTitle,
   AsideNavigationLink,
 } from '@/components/ui/aside-navigation'
@@ -20,15 +19,7 @@ import {
   BreadcrumbsDivider,
   BreadcrumbsItem,
 } from '@/components/ui/breadcrumbs'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Table, TableCaption } from '@/components/ui/table'
 import {
   Card,
   CardContent,

@@ -207,7 +207,7 @@ export default function AccordionDefault() {
             <TypographyH6 className="mb-2">Accordion trigger</TypographyH6>
             <Table>
               <TableCaption>
-                Besides these props, you can also use other{' '}
+                You can use the default{' '}
                 <a href="https://www.radix-ui.com/primitives/docs/components/accordion#trigger">
                   radix-ui accordion trigger
                 </a>{' '}
@@ -221,7 +221,7 @@ export default function AccordionDefault() {
             <TypographyH6 className="mb-2">Accordion content</TypographyH6>
             <Table>
               <TableCaption>
-                Besides these props, you can also use other{' '}
+                You can use the default{' '}
                 <a href="https://www.radix-ui.com/primitives/docs/components/accordion#content">
                   radix-ui accordion content
                 </a>{' '}

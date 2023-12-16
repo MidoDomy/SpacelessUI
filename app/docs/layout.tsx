@@ -22,6 +22,7 @@ export default function DashboardLayout({
     { name: 'Button', url: 'button' },
     { name: 'Button group', url: 'button-group' },
     { name: 'Card', url: 'card' },
+    { name: 'Collapsible', url: 'collapsible' },
   ]
 
   return (

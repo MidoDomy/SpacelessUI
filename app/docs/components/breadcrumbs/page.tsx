@@ -100,6 +100,16 @@ export default function BadgeDefault() {
         <section id="props" className="space-y-5">
           <TypographyH2 className="pb-2 border-b">Props</TypographyH2>
 
+          {/* Main props */}
+          <div>
+            <TypographyH6 className="mb-2">Breadcrumbs</TypographyH6>
+            <Table>
+              <TableCaption>
+                You can use the default <code>div</code> props.
+              </TableCaption>
+            </Table>
+          </div>
+
           {/* Breadcrumb item props */}
           <div>
             <TypographyH6 className="mb-2">Breadcrumbs item</TypographyH6>

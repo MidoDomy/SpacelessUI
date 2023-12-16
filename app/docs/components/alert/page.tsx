@@ -104,6 +104,7 @@ export default function AlertDefault() {
         <section id="props" className="space-y-5">
           <TypographyH2 className="pb-2 border-b">Props</TypographyH2>
 
+          {/* Main props */}
           <div>
             <TypographyH6 className="mb-2">Alert</TypographyH6>
             <Table>
@@ -144,6 +145,26 @@ export default function AlertDefault() {
                   <TableCell>function</TableCell>
                 </TableRow>
               </TableBody>
+            </Table>
+          </div>
+
+          {/* Title */}
+          <div>
+            <TypographyH6 className="mb-2">Alert title</TypographyH6>
+            <Table>
+              <TableCaption>
+                You can use the default <code>heading</code> props.
+              </TableCaption>
+            </Table>
+          </div>
+
+          {/* Description */}
+          <div>
+            <TypographyH6 className="mb-2">Alert description</TypographyH6>
+            <Table>
+              <TableCaption>
+                You can use the default <code>paragraph</code> props.
+              </TableCaption>
             </Table>
           </div>
         </section>

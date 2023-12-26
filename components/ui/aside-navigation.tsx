@@ -54,8 +54,8 @@ const AsideNavigationLink = React.forwardRef<
   <a
     ref={ref}
     className={cn(
-      'mb-1 last:mb-0 p-0.5 text-sm text-muted hover:underline active:text-primary-700',
-      active ? 'text-primary-700' : 'hover:text-muted',
+      'mb-1 last:mb-0 p-0.5 text-sm hover:underline active:text-primary-700',
+      active ? 'text-primary-600' : 'text-muted hover:text-muted',
       className,
     )}
     {...props}

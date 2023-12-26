@@ -1,3 +1,8 @@
+'use client'
+
+import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+
 import {
   AsideNavigation,
   AsideNavigationGroup,
@@ -10,6 +15,8 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
+  const pathname = usePathname()
+
   const components = [
     { name: 'Accordion', url: 'accordion' },
     { name: 'Alert', url: 'alert' },
@@ -46,7 +53,11 @@ export default function DashboardLayout({
             <AsideNavigationGroupTitle> Components </AsideNavigationGroupTitle>
 
             {components.map((component) => (
-              <AsideNavigationLink href={`/docs/components/${component.url}`}>
+              <AsideNavigationLink 
+                active={pathname.split("/").pop() == component.url}
+                href={`/docs/components/${component.url}`} 
+                key={component.name}
+              >
                 {component.name}
               </AsideNavigationLink>
             ))}

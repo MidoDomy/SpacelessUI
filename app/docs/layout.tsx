@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
 import {
@@ -30,6 +29,7 @@ export default function DashboardLayout({
     { name: 'Button group', url: 'button-group' },
     { name: 'Card', url: 'card' },
     { name: 'Collapsible', url: 'collapsible' },
+    { name: 'Context menu', url: 'context-menu' },
   ]
 
   return (
@@ -53,9 +53,9 @@ export default function DashboardLayout({
             <AsideNavigationGroupTitle> Components </AsideNavigationGroupTitle>
 
             {components.map((component) => (
-              <AsideNavigationLink 
-                active={pathname.split("/").pop() == component.url}
-                href={`/docs/components/${component.url}`} 
+              <AsideNavigationLink
+                active={pathname.split('/').pop() == component.url}
+                href={`/docs/components/${component.url}`}
                 key={component.name}
               >
                 {component.name}

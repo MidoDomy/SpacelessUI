@@ -3,7 +3,6 @@ import React from 'react'
 import {
   AsideNavigation,
   AsideNavigationGroup,
-  AsideNavigationSubGroup,
   AsideNavigationGroupTitle,
   AsideNavigationLink,
 } from '@/components/ui/aside-navigation'
@@ -20,15 +19,7 @@ import {
   BreadcrumbsDivider,
   BreadcrumbsItem,
 } from '@/components/ui/breadcrumbs'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Table, TableCaption } from '@/components/ui/table'
 
 import ComponentPreview from '@/components/partials/component-preview'
 import {
@@ -38,7 +29,7 @@ import {
 } from '@/components/ui/collapsible'
 import { Icon } from '@/components/ui/icon'
 
-export default function CardPage() {
+export default function CollapsiblePage() {
   return (
     <>
       {/* Page main content */}
@@ -82,7 +73,7 @@ export default function CardPage() {
             code={`import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Button } from '@/components/ui/button'
 
-export default function CardDefault() {
+export default function CollapsibleDefault() {
   return (
     <Collapsible className="w-96">
       <CollapsibleTrigger asChild>

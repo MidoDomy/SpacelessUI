@@ -21,15 +21,15 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
   ...props
 }) => {
   const sourceDivRef = useRef<HTMLDivElement | null>(null)
-  const [innerHTML, setInnerHTML] = useState<string>('')
+  // const [innerHTML, setInnerHTML] = useState<string>('')
 
-  useEffect(() => {
-    // Get inner HTML content from the source div
-    const sourceDiv = sourceDivRef.current
-    if (sourceDiv) {
-      setInnerHTML(sourceDiv.innerHTML)
-    }
-  }, [preview])
+  // useEffect(() => {
+  //   // Get inner HTML content from the source div
+  //   const sourceDiv = sourceDivRef.current
+  //   if (sourceDiv) {
+  //     setInnerHTML(sourceDiv.innerHTML)
+  //   }
+  // }, [preview])
 
   return (
     <div {...props}>
@@ -48,11 +48,11 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
                 Code
               </TabsTrigger>
             )}
-            {preview && (
+            {/* {preview && (
               <TabsTrigger className="pb-2.5" value="html">
                 HTML
               </TabsTrigger>
-            )}
+            )} */}
           </TabsList>
         </div>
 
@@ -76,13 +76,13 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({
         )}
 
         {/* HTML is taken from inner HTML of preview */}
-        {preview && (
+        {/* {preview && (
           <TabsContent className="mt-0" value="html">
             <Code className="min-h-[220px]">
               {innerHTML.replace(/>([^<]*)</g, '>\n$1\n<')}
             </Code>
           </TabsContent>
-        )}
+        )} */}
       </Tabs>
     </div>
   )

@@ -135,7 +135,9 @@ export default function AsideNavigationDefault() {
 
           {/* Main props */}
           <div>
-            <TypographyH6 className="mb-2">Aside navigation, group, subgroup</TypographyH6>
+            <TypographyH6 className="mb-2">
+              Aside navigation, group, subgroup
+            </TypographyH6>
             <Table>
               <TableCaption>
                 You can use the default <code>div</code> props.
@@ -145,7 +147,9 @@ export default function AsideNavigationDefault() {
 
           {/* Title props */}
           <div>
-            <TypographyH6 className="mb-2">Aside navigation group title</TypographyH6>
+            <TypographyH6 className="mb-2">
+              Aside navigation group title
+            </TypographyH6>
             <Table>
               <TableCaption>
                 You can use the default <code>heading</code> props.

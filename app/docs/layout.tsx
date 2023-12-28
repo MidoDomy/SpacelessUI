@@ -30,6 +30,7 @@ export default function DashboardLayout({
     { name: 'Card', url: 'card' },
     { name: 'Collapsible', url: 'collapsible' },
     { name: 'Context menu', url: 'context-menu' },
+    { name: 'Dialog', url: 'dialog' },
   ]
 
   return (

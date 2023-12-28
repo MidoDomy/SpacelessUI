@@ -291,7 +291,7 @@ export default function ContextMenuDefault() {
           {/* Item props */}
           <div>
             <TypographyH6 className="mb-2">Context menu item</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use the default{' '}
@@ -322,7 +322,7 @@ export default function ContextMenuDefault() {
           {/* Group props */}
           <div>
             <TypographyH6 className="mb-2">Context menu group</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use the default{' '}
@@ -337,7 +337,7 @@ export default function ContextMenuDefault() {
           {/* Label props */}
           <div>
             <TypographyH6 className="mb-2">Context menu label</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use the default{' '}
@@ -367,8 +367,10 @@ export default function ContextMenuDefault() {
 
           {/* Checkbox item props */}
           <div>
-            <TypographyH6 className="mb-2">Context menu checkbox item</TypographyH6>
-            
+            <TypographyH6 className="mb-2">
+              Context menu checkbox item
+            </TypographyH6>
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use the default{' '}
@@ -398,8 +400,10 @@ export default function ContextMenuDefault() {
 
           {/* Radio group props */}
           <div>
-            <TypographyH6 className="mb-2">Context menu radio group</TypographyH6>
-            
+            <TypographyH6 className="mb-2">
+              Context menu radio group
+            </TypographyH6>
+
             <Table>
               <TableCaption>
                 You can also use the default{' '}
@@ -413,8 +417,10 @@ export default function ContextMenuDefault() {
 
           {/* Radio item props */}
           <div>
-            <TypographyH6 className="mb-2">Context menu radio item</TypographyH6>
-            
+            <TypographyH6 className="mb-2">
+              Context menu radio item
+            </TypographyH6>
+
             <Table>
               <TableCaption>
                 You can also use the default{' '}
@@ -429,7 +435,7 @@ export default function ContextMenuDefault() {
           {/* Separator props */}
           <div>
             <TypographyH6 className="mb-2">Context menu separator</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 You can also use the default{' '}
@@ -444,7 +450,7 @@ export default function ContextMenuDefault() {
           {/* Sub props */}
           <div>
             <TypographyH6 className="mb-2">Context menu sub</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 You can also use the default{' '}
@@ -458,8 +464,10 @@ export default function ContextMenuDefault() {
 
           {/* Sub trigger props */}
           <div>
-            <TypographyH6 className="mb-2">Context menu sub trigger</TypographyH6>
-            
+            <TypographyH6 className="mb-2">
+              Context menu sub trigger
+            </TypographyH6>
+
             <Table>
               <TableCaption>
                 Besides these props, you can also use the default{' '}
@@ -489,8 +497,10 @@ export default function ContextMenuDefault() {
 
           {/* Sub content props */}
           <div>
-            <TypographyH6 className="mb-2">Context menu sub content</TypographyH6>
-            
+            <TypographyH6 className="mb-2">
+              Context menu sub content
+            </TypographyH6>
+
             <Table>
               <TableCaption>
                 You can also use the default{' '}
@@ -505,7 +515,7 @@ export default function ContextMenuDefault() {
           {/* Shortcut props */}
           <div>
             <TypographyH6 className="mb-2">Context menu shortcut</TypographyH6>
-            
+
             <Table>
               <TableCaption>
                 You can use default <code>span</code> attributes.
@@ -589,7 +599,9 @@ export default function ContextMenuDefault() {
                     Show Bookmarks Bar
                   </ContextMenuCheckboxItem>
                   <ContextMenuSub>
-                    <ContextMenuSubTrigger inset>First Tools</ContextMenuSubTrigger>
+                    <ContextMenuSubTrigger inset>
+                      First Tools
+                    </ContextMenuSubTrigger>
                     <ContextMenuSubContent className="w-48">
                       <ContextMenuItem>Action</ContextMenuItem>
                     </ContextMenuSubContent>
@@ -938,9 +950,13 @@ export {
             <AsideNavigationSubGroup>
               <AsideNavigationLink href="#sub">Sub menus</AsideNavigationLink>
               <AsideNavigationLink href="#inset">Inset</AsideNavigationLink>
-              <AsideNavigationLink href="#separator">Separator</AsideNavigationLink>
+              <AsideNavigationLink href="#separator">
+                Separator
+              </AsideNavigationLink>
               <AsideNavigationLink href="#label">Label</AsideNavigationLink>
-              <AsideNavigationLink href="#shortcut">Shortcut</AsideNavigationLink>
+              <AsideNavigationLink href="#shortcut">
+                Shortcut
+              </AsideNavigationLink>
             </AsideNavigationSubGroup>
             <AsideNavigationLink href="#manually">
               Add manually
